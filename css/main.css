@@ -201,7 +201,15 @@ nav.main-menu ul li a:hover{
     position: absolute;
     right:0;
     bottom:0;
+    padding-right:54px;
     top:0;
+}
+.toggle-button{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+
 }
 .hamburger {
     font: inherit;
@@ -304,20 +312,32 @@ nav.main-menu ul li a:hover{
 .search-btn{
     color:#fff;
     background:none;
-    width:40px;
-    height:44px;
+    width:100%;
+    height:100%;
     border:0 none;
     outline: 0 none;
     color:#fff;
     cursor: pointer;
     margin:0;
-    display: inline-block;
+    display:block;
     padding: 0;
-    margin-top:-10px;
     line-height: 44px;
 }
 .search-btn i {
     font-size:18px;
+}
+ul.tool-list li {
+    float:left;
+    display: block;
+    height:44px;
+    width:44px;
+    color:#fff;
+    border-left:1px solid #fff;
+    text-align: center;
+    line-height: 44px;
+}
+ul.tool-list li:first-child{
+    border-left:none;
 }
 /* ==========================================================================
    Helper classes

@@ -1,4 +1,4 @@
-   $(document).ready(function () {
+$(document).ready(function () {
 	$(".toggle-button").click(function() {
 
 	// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
@@ -6,4 +6,21 @@
 	$(".navbar-menu").toggleClass("is-active");
 
 	});
+
+	var homeswiper = new Swiper('#swiper-home', {
+	loop:true,
+	});
+    
+    swiperThumbs(homeswiper, {
+        // Our default options
+        element: 'c11',
+        activeClass: 'swiper-pagination-bullet-active',
+        scope: '.home-slider' // Parent selector that surrounds your Swiper html & Swiper thumbnail html to support multiple Swiper instances on one page.
+    });
+
 });
+
+$('.home-slider').imagesLoaded( function() {
+  $('.home-slider').addClass('images-loaded');
+});
+

@@ -9,6 +9,7 @@ $(document).ready(function () {
 
 	var homeswiper = new Swiper('#swiper-home', {
 	loop:true,
+	allowTouchMove:false,
 	});
     
     swiperThumbs(homeswiper, {

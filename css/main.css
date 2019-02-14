@@ -451,7 +451,7 @@ ul.tool-list li:first-child{
     }
     .home-slider .swiper-slide .slide-content .story-number span {
         float: left;
-        padding: 7px 9px 3px 10px;
+        padding: 4px 9px 3px 10px;
         border: 1px solid #FFF;
         letter-spacing: .03em;
         font-size: 14px;
@@ -1107,8 +1107,8 @@ ul.tool-list li:first-child{
     .home-slider .swiper-slide .slide-content h2 {
         width: 200%;
         max-width: 200%;
-        font-size: 112px;
-        line-height: 98px
+        font-size: 66px;
+        line-height: 78px
     }
     .home-slider .swiper-slide .slide-content h2+p {
         font-size: 18px;

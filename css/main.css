@@ -338,8 +338,146 @@ ul.tool-list li {
     text-align: center;
     line-height: 44px;
 }
-ul.tool-list li:first-child{
+ul.tool-list li a{
+    color:#fff;
+}
+ul.tool-list li.no-border{
     border-left:none;
+}
+
+.search-overlay-open.search-overlay {
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.search-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 80px 16px 0;
+    padding: calc(50vh - 134px) 16px 0;
+    z-index: 99999;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    background: rgba(0,0,0,.8);
+    transition: all .5s;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+    will-change: transform;
+}
+@media screen and (min-width: 1024px) {
+.search-overlay {
+    padding: 160px 16px 0;
+    padding: calc(50vh - 180px) 16px 0;
+}
+}
+
+.search-overlay form {
+    max-width: 750px;
+    margin: 0 auto;
+}
+.search-overlay fieldset {
+    min-width: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 1024px) {
+.search-overlay label {
+    padding: 0 0 62px;
+    font-size: 74px;
+    line-height: 1;
+}
+}
+
+
+.search-overlay label {
+    display: block;
+    max-width: 240px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    font-family: DINNextW01-CondensedMed,'Arial Narrow',Helvetica,Arial,sans-serif;
+    color: #FFF;
+    font-size: 36px;
+    line-height: 38px;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: -.02em;
+}
+.search-overlay fieldset>div.input-cont {
+    position: relative;
+}
+.search-overlay .input-bg {
+    border: 1px solid #999;
+    border-radius: 2px;
+    background: rgba(0,0,0, 0.5);
+}
+
+.search-overlay .text {
+    margin: 0;
+    padding: 4px 22px 0;
+    border: 0;
+    width: 100%;
+    height: 76px;
+    outline: 0;
+    box-sizing: border-box;
+    color: #3cb49a;
+    font-size: 48px;
+    line-height: 1;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+}
+
+@media screen and (min-width: 1024px) {
+.search-overlay .text {
+    background: 0 0;
+}
+}
+
+.search-overlay button {
+    width: 78px;
+    height: 58px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 0;
+    border-radius: 3px;
+    background: #3cb49a;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    border:0 none;
+}
+@media screen and (min-width: 375px) {
+.search-overlay label {
+    max-width: 100%;
+}
+}
+@media screen and (min-width: 1024px) {
+.search-overlay button {
+    width: 114px;
+    height: 58px;
+    padding-top: 3px;
+    font-size: 24px;
+    line-height: 1;
+    text-indent: 0;
+}
+}
+.search-overlay .close-search {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.search-overlay .close-search i {
+    font-size:30px;
+    color:#fff;
+
+
 }
 /* ==========================================================================
   slider
@@ -396,6 +534,25 @@ padding:15px;
 
 
 
+@media screen and (max-width:1100px) {
+    nav.main-menu {
+        display: none;
+    }
+    .left-side{
+        padding-left:15px;
+    }
+}
+@media screen and (max-width:880px) {
+    nav.main-menu {
+        display: none;
+    }
+    .left-side{
+        padding-left:15px;
+        width:190px;
+    }
+
+
+}
 
 /*
  * Hide visually and from screen readers

@@ -7,6 +7,22 @@ $(document).ready(function () {
 
 	});
 
+	$(".toggle-search").click(function() {
+
+		// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+		$(this).toggleClass("is-active");
+		$(".search-overlay").toggleClass("search-overlay-open");
+
+	});
+
+	$(".close-search").click(function() {
+
+		// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+		$(".toggle-search").removeClass("is-active");
+		$(".search-overlay").removeClass("search-overlay-open");
+
+	});
+
 	var homeswiper = new Swiper('#swiper-home', {
 	loop:true,
 	allowTouchMove:false,

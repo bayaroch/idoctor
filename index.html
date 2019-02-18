@@ -41,8 +41,9 @@
     </nav>
     <div class="tool-menu">
       <ul class="tool-list clearfix">
-      <li>F</li>
-      <li><button class="search-btn"><i class="fas fa-search"></i></button></li>
+      <li class="no-border"><a href=""><i class="fab fa-facebook-f"></i></a></li>
+      <li class="no-border"><a href=""><i class="fab fa-twitter"></i></a></li>
+      <li><button class="search-btn toggle-search"><i class="fas fa-search"></i></button></li>
       </ul>
       <div class="hamburger toggle-button hamburger--squeeze js-hamburger">
         <div class="hamburger-box">
@@ -53,6 +54,8 @@
     </div>
 
   </header>
+
+ 
 
   <div class="mobile-menu">
     <div class="inner-mobile">
@@ -65,6 +68,19 @@
       </ul>
 
     </div>
+  </div>
+
+   <div class="search-overlay">
+    <a href="#" class="close-search"><i class="fas fa-times"></i></a>
+    <form action="#">
+      <fieldset>
+        <label for="search">Хайлт хийх</label>
+        <div class="input-cont">
+          <div class="input-bg"><input type="search" class="text" id="search" name="searchozy"></div>
+          <button class="submit" type="submit">Хайх</button>
+        </div>
+      </fieldset>
+    </form>
   </div>
 
   <div class="home-slider">

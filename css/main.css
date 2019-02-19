@@ -33,7 +33,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
+   html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -42,21 +42,21 @@ body{
     font-family: 'SF Pro Display';
     font-weight:400;
     font-size:14px}
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+    ::-moz-selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+    ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
 
 /*
  * A better looking default horizontal rule
  */
 
-hr {
+ hr {
     display: block;
     height: 1px;
     border: 0;
@@ -71,12 +71,12 @@ hr {
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+ audio,
+ canvas,
+ iframe,
+ img,
+ svg,
+ video {
     vertical-align: middle;
 }
 
@@ -84,7 +84,7 @@ video {
  * Remove default fieldset styles.
  */
 
-fieldset {
+ fieldset {
     border: 0;
     margin: 0;
     padding: 0;
@@ -94,7 +94,7 @@ fieldset {
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
+ textarea {
     resize: vertical;
 }
 
@@ -102,7 +102,7 @@ textarea {
    Browser Upgrade Prompt
    ========================================================================== */
 
-.browserupgrade {
+   .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
@@ -116,6 +116,13 @@ textarea {
 .container{
     max-width: 1200px;
     margin:0 auto;
+    width:100%;
+}
+@media screen and (min-width: 1280px) {
+.container {
+    max-width: 1200px;
+    width: 1200px;
+}
 }
 header.header-main{
     z-index:999;
@@ -154,8 +161,8 @@ a.logo-brand {
 
 }
 a.logo-brand img{
-     height:28px;
-    width:auto;
+   height:28px;
+   width:auto;
 }
 .slogan{
     position: absolute;
@@ -371,10 +378,10 @@ ul.tool-list li.no-border{
     will-change: transform;
 }
 @media screen and (min-width: 1024px) {
-.search-overlay {
-    padding: 160px 16px 0;
-    padding: calc(50vh - 180px) 16px 0;
-}
+    .search-overlay {
+        padding: 160px 16px 0;
+        padding: calc(50vh - 180px) 16px 0;
+    }
 }
 
 .search-overlay form {
@@ -388,11 +395,11 @@ ul.tool-list li.no-border{
 }
 
 @media screen and (min-width: 1024px) {
-.search-overlay label {
-    padding: 0 0 62px;
-    font-size: 74px;
-    line-height: 1;
-}
+    .search-overlay label {
+        padding: 0 0 62px;
+        font-size: 74px;
+        line-height: 1;
+    }
 }
 
 
@@ -434,9 +441,9 @@ ul.tool-list li.no-border{
 }
 
 @media screen and (min-width: 1024px) {
-.search-overlay .text {
-    background: 0 0;
-}
+    .search-overlay .text {
+        background: 0 0;
+    }
 }
 
 .search-overlay button {
@@ -454,19 +461,19 @@ ul.tool-list li.no-border{
     border:0 none;
 }
 @media screen and (min-width: 375px) {
-.search-overlay label {
-    max-width: 100%;
-}
+    .search-overlay label {
+        max-width: 100%;
+    }
 }
 @media screen and (min-width: 1024px) {
-.search-overlay button {
-    width: 114px;
-    height: 58px;
-    padding-top: 3px;
-    font-size: 24px;
-    line-height: 1;
-    text-indent: 0;
-}
+    .search-overlay button {
+        width: 114px;
+        height: 58px;
+        padding-top: 3px;
+        font-size: 24px;
+        line-height: 1;
+        text-indent: 0;
+    }
 }
 .search-overlay .close-search {
     position: absolute;
@@ -476,39 +483,293 @@ ul.tool-list li.no-border{
 .search-overlay .close-search i {
     font-size:30px;
     color:#fff;
+}
+h2.section-title{
+    font-family: "PT Sans Narrow", Arial, sans-serif;
+    font-size:50px;
+    font-weight:600;
+    text-transform: uppercase;
+    text-align: center;
+    color:#3cb49a;
+}
+section.section {
+    padding:40px 0;
+}
+ul.cat-list{
+    display: inline-block;
+    width:auto;
+    margin:0 auto;
+    padding-bottom:30px;
+}
+ul.cat-list li{
+    float:left;
+}
+ul.cat-list li a{
+    display: block;
+    padding:5px 15px;
+    text-transform: uppercase;
+    color:#3cb49a;
+    font-family: "PT Sans Narrow", Arial, sans-serif;
+    font-size:16px;
+    position: relative;
+    font-weight:500;
+}
+ul.cat-list li a:hover{
+    color:#333;
+}
+ul.cat-list li a:after{
+    position: absolute;
+    right:0px;
+    top:3px;
+    content:"/";
+}
+ul.cat-list li.list-title{
+    padding:5px 10px;
+    font-family: "PT Sans Narrow", Arial, sans-serif;
+     font-size:16px;
+    font-weight:500;
+}
+.cat-list_container{
+    text-align: center;
+}
+.latest-news{
+    background:#222222;
+    height:200px;
+}
+.story-block-large{
+    position: relative;
+}
+@media screen and (min-width: 1024px) {
+.top-stories-column .story-block-large article.story-large {
+    padding-bottom: 160px;
+    background: #171717;
+    min-height: 400px;
+}
+}
 
+@media screen and (min-width: 1024px) {
+.story-block-large {
+    display: block;
+}
+}
 
+@media screen and (min-width: 1024px) {
+.top-stories-column .story-block-large article.story-large {
+    padding-bottom: 160px;
+    background: #171717;
+    min-height: 400px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+.story-block-large article.story-large {
+    width: 100%;
+    float: none;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block article .image {
+    position: relative;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block-large .image {
+    background: #171717;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block article .image:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block article .image:before, .story-block-large .text:before {
+    content: "";
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block .image{
+    height:350px;
+}
+.story-block .image img {
+    display: block;
+        width: 100%;
+        height:100%;
+        object-fit: cover;
+}
+}
+.story-block .image a {
+    display: block;
+    overflow: hidden;
+}
+.story-block .image img {
+    display: block;
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+.story-block article .image img {
+    transition: all .3s ease-in-out;
+}
+}
+
+.story-block .text {
+    position: relative;
+    border: solid currentColor;
+    border-width: 0 1px 2px;
+    z-index: 100;
+}
+
+.story-block .text, .story-block-carousel .text {
+    padding-left: 4.6875%;
+    padding-right: 4.6875%;
+    padding-bottom: 25px;
+}
+
+@media screen and (min-width: 1024px) {
+.top-stories-column .story-block-large .text {
+    background: linear-gradient(to top,#171717 0,#171717 160px,rgba(23,23,23,0) 100%);
+    min-height: 205px;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block-large .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 0;
+    padding-bottom: 40px;
+    background: #171717;
+    background: linear-gradient(to top,#171717 0,#171717 30%,rgba(23,23,23,0) 100%);
+}
+}
+
+.story-block .text .cat-tag{
+    position: relative;
+    top: -15px;
+    margin-bottom: -1px;
+}
+.cat-tag{
+        padding: 4px 8px 4px 8px;
+    color: #FFF!important;
+    font-family: 'PT Sans Narrow',Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight:500;
+    line-height: 1;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    z-index: 3;
+}
+.ozy-icon, .cat-tag {
+    display: inline-block;
+}
+.story-block, .story-block-title {
+    text-align: center;
+}
+@media screen and (min-width: 1024px) {
+.story-block-large .text .cat-tag {
+    top: 0;
+    margin-bottom: 20px;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block-large .text:before {
+    position: absolute;
+    top: 14px;
+    height: 1px;
+    max-width: 560px;
+    margin: 0 auto;
+    background: linear-gradient(to left,transparent 0,#3cb49a 50%,transparent 100%) 50% 0 no-repeat;
+    background-size: 64% 1px;
+}
+}
+.p-color{
+    background-color:#3cb49a;
+}
+.story-block .text a:not(.cat-tag) {
+ 
+}
+@media screen and (min-width: 1280px) {
+.story-block-large .text a:not(.cat-tag) {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block-large .text a:not(.tag) h3 {
+    color: #FFF;
+}
+}
+
+.story-block .text h3 {
+    margin: 0 0 7px;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: none;
+    letter-spacing: -.015em;
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    font-weight:600;
+}
+
+@media screen and (min-width: 1024px) {
+.story-block-large .text a:not(.cat-tag) h3 {
+    color: #FFF;
+}
+}
+@media screen and (min-width: 1024px) {
+.story-block-large .text h3 {
+    font-size: 36px;
+    line-height: 1;
+}
+}
+.story-block .text p {
+    margin: 0;
+    color: #BABABA;
+    font-size: 14px;
+    line-height: 18px;
 }
 /* ==========================================================================
   slider
-   ========================================================================== */
-.mobile-menu{
-position: fixed;
-right:-9999px;
-top:0px;
-bottom:0;
-z-index:998;
-background:#fff;
-width:300px;
-height:100%;
--webkit-transform: translate3d(-200px, 0, 0);
--moz-transform: translate3d(-200px, 0, 0);
-transform: translate3d(-200px, 0, 0);
--webkit-transition: all 300ms ease;
--moz-transition: all 300ms ease;
-transition: all 300ms ease;
-padding-top:50px;
+  ========================================================================== */
+  .mobile-menu{
+    position: fixed;
+    right:-9999px;
+    top:0px;
+    bottom:0;
+    z-index:998;
+    background:#fff;
+    width:300px;
+    height:100%;
+    -webkit-transform: translate3d(-200px, 0, 0);
+    -moz-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+    padding-top:50px;
 }
 .mobile-menu.is-active{
-right:0;
--webkit-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
--webkit-transform: translate3d(0, 0, 0);
--moz-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
+    right:0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 .inner-mobile{
-padding:15px;
+    padding:15px;
 }
 .m-menu li a {
     color:#555;
@@ -558,7 +819,7 @@ padding:15px;
  * Hide visually and from screen readers
  */
 
-.hidden {
+ .hidden {
     display: none !important;
 }
 
@@ -571,7 +832,7 @@ padding:15px;
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
-.visuallyhidden {
+ .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -589,8 +850,8 @@ padding:15px;
  * https://www.drupal.org/node/897638
  */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -604,7 +865,7 @@ padding:15px;
  * Hide visually and from screen readers, but maintain layout
  */
 
-.invisible {
+ .invisible {
     visibility: hidden;
 }
 
@@ -620,8 +881,8 @@ padding:15px;
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
-.clearfix:after {
+ .clearfix:before,
+ .clearfix:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
@@ -636,14 +897,14 @@ padding:15px;
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+   @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -653,7 +914,7 @@ padding:15px;
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-@media print {
+   @media print {
     *,
     *:before,
     *:after {
@@ -682,8 +943,8 @@ padding:15px;
      * or use the `javascript:` pseudo protocol
      */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+     a[href^="#"]:after,
+     a[href^="javascript:"]:after {
         content: "";
     }
 
@@ -701,7 +962,7 @@ padding:15px;
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
 
-    thead {
+     thead {
         display: table-header-group;
     }
 

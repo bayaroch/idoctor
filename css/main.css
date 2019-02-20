@@ -117,11 +117,15 @@ body{
     max-width: 1200px;
     margin:0 auto;
     width:100%;
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+
 }
 @media screen and (min-width: 1280px) {
 .container {
     max-width: 1200px;
     width: 1200px;
+    padding:0;
 }
 }
 header.header-main{
@@ -599,23 +603,49 @@ ul.cat-list li.list-title{
 }
 }
 @media screen and (min-width: 1024px) {
-.story-block .image{
+.story-block.story-block-large .image a{
     height:350px;
-}
-.story-block .image img {
-    display: block;
-        width: 100%;
-        height:100%;
-        object-fit: cover;
-}
-}
-.story-block .image a {
-    display: block;
-    overflow: hidden;
+    overflow:hidden;
 }
 .story-block .image img {
     display: block;
     width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+}
+.story-block .image img {
+    display: block;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+.story-block .image a {
+    display: block;
+    overflow: hidden;
+    height:190px;
+}
+.story-block .image img {
+    display: block;
+    width: 100%;
+}
+.story-block article {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+.story-block:not(.story-block-large) article .text {
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    min-height: 146px;
+}
+}
+@media screen and (min-width: 1280px) {
+.story-block {
+    margin-bottom: 1.5rem;
+}
 }
 
 @media screen and (min-width: 1024px) {
@@ -624,10 +654,23 @@ ul.cat-list li.list-title{
 }
 }
 
+ .story-block article .image img {
+        transition: all .3s ease-in-out
+    }
+    .story-block article:hover .image:before {
+        opacity: 1
+    }
+    .story-block article:hover .image img {
+        -webkit-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        transform: scale(1.04)
+    }
+    .story-block-large {
+        display: block
+    }
+
 .story-block .text {
     position: relative;
-    border: solid currentColor;
-    border-width: 0 1px 2px;
     z-index: 100;
 }
 
@@ -715,14 +758,17 @@ ul.cat-list li.list-title{
 
 .story-block .text h3 {
     margin: 0 0 7px;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 24px;
+    color:#333;
     text-transform: none;
     letter-spacing: -.015em;
     font-family: 'PT Sans Narrow', Arial, sans-serif;
     font-weight:600;
 }
-
+.story-block .text h3:hover{
+    color:#3cb49a;
+}
 @media screen and (min-width: 1024px) {
 .story-block-large .text a:not(.cat-tag) h3 {
     color: #FFF;
@@ -736,9 +782,166 @@ ul.cat-list li.list-title{
 }
 .story-block .text p {
     margin: 0;
-    color: #BABABA;
+    color: #888;
     font-size: 14px;
     line-height: 18px;
+}
+.card {
+       box-shadow: 0 2px 3px rgba(10,10,10,.15), 0 0 0 1px rgba(10,10,10,.15); 
+}
+
+.news-sidebar{
+    position: relative;
+    background: #222;
+}
+
+.pdb-tabd{
+    display: none;
+}
+@media screen and (min-width: 768px) {
+.pdb-tabs {
+        display: block;
+        padding: 20px 15px 30px;
+        font-size:0;
+    }
+    .pdb-tabs button {
+        position: relative;
+        width: 50%;
+        margin: 0;
+        padding: 15px 22px 12px;
+        background: 0 0;
+        border: 1px solid #2c5f59;
+        border-radius: 0;
+        font-family: 'PT Sans Narrow', Helvetica, Arial, sans-serif;
+        color: #777;
+        font-size: 20px;
+        line-height: 1;
+        transition: all .4s;
+        box-sizing: border-box;
+        outline:0 none;
+        cursor: pointer !important;
+
+    }
+    .pdb-tabs button:focus,
+    .pdb-tabs button:hover {
+        background: #3cb49a;
+        border-color: #3cb49a;
+        color: #000
+    }
+    .pdb-tabs button:after,
+    .pdb-tabs button:before {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: #3cb49a transparent transparent;
+        border-width: 12px 24px 24px;
+        margin-left: -24px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity .4s
+    }
+    .pdb-tabs button:after {
+        border-top-color: #000;
+        margin-top: -1px;
+        z-index: 2;
+        transition: opacity .4s
+    }
+    .pdb-tabs button.current {
+        border-color: #3cb49a;
+        background: #000;
+        color: #FFF;
+        z-index: 1
+    }
+    .pdb-tabs button.current:after,
+    .pdb-tabs button.current:before {
+        opacity: 1
+    }
+    .pdb-tabs button.current:first-child {
+        margin-right: -1px
+    }
+    .pdb-tabs button.current:last-child {
+        margin-left: -1px
+    }
+}
+
+.tab_container {
+  background: transparent;
+}
+
+.tab_content {
+  padding: 15px;
+  font-size: 16px;
+}
+.news-list li {
+padding: 0 0 15px
+}
+.news-list li .image {
+width: 95px;
+height: 95px
+}
+.news-list li .image img {
+width: 100%;
+height:100%;
+ object-fit: cover;
+}
+.news-list li .image {
+    position: relative;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-right: 16px;
+}
+.news-list li .image:before{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:4px;
+    height:100%;
+    background:#3cb49a;
+    content:"";
+    display: block;
+    z-index:1;
+}
+.news-list li .image:hover:before{
+    background: transparent;
+    transition: all 0.1s ease;
+}
+
+.news-list li .text {
+    float: left;
+    width: 55%;
+    width: calc(100% - 111px);
+}
+@media screen and (min-width: 768px) {
+    .news-list li .text {
+        line-height: 22px;
+    }
+}
+.news-list li h4 {
+    position: relative;
+    display: inline;
+    margin: 0;
+    color: #FFF;
+    font-family: 'PT Sans Narrow',Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    line-height: 22px;
+    text-transform: none;
+    transition: color .2s;
+}
+.news-list li .short-title {
+    margin: -3px 0 3px;
+    color: #3cb49a;
+    font-family: 'PT Sans Narrow',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
 }
 /* ==========================================================================
   slider

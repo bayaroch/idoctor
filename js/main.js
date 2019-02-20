@@ -39,5 +39,20 @@ $(document).ready(function () {
 
 $('.home-slider').imagesLoaded( function() {
   $('.home-slider').addClass('images-loaded');
+
+
+  $('.tab_content').hide();
+  $('.tab_content:first').show();
+  $('.pdb-tabs button:first').addClass('current');
+  $('.pdb-tabs button').click(function(event) {
+    $('.pdb-tabs button').removeClass('current');
+    $(this).addClass('current');
+    $('.tab_content').hide();
+
+    var selectTab = $(this).data("id");
+
+    $("#"+selectTab).fadeIn();
+  });
+
 });
 

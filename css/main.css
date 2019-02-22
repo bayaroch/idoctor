@@ -490,7 +490,7 @@ ul.tool-list li.no-border{
 }
 h2.section-title{
     font-family: "PT Sans Narrow", Arial, sans-serif;
-    font-size:50px;
+    font-size:44px;
     font-weight:600;
     text-transform: uppercase;
     text-align: center;
@@ -629,7 +629,7 @@ ul.cat-list li.list-title{
     display: block;
     width: 100%;
 }
-.story-block article {
+.story-block.story-block-large article {
     position: relative;
     margin-bottom: 1.5rem;
 }
@@ -683,7 +683,7 @@ ul.cat-list li.list-title{
 @media screen and (min-width: 1024px) {
 .top-stories-column .story-block-large .text {
     background: linear-gradient(to top,#171717 0,#171717 160px,rgba(23,23,23,0) 100%);
-    min-height: 205px;
+    min-height: 200px;
 }
 }
 @media screen and (min-width: 1024px) {
@@ -764,9 +764,9 @@ ul.cat-list li.list-title{
     text-transform: none;
     letter-spacing: -.015em;
     font-family: 'PT Sans Narrow', Arial, sans-serif;
-    font-weight:600;
+    font-weight:500;
 }
-.story-block .text h3:hover{
+.story-block .text h3:hover, .story-block h3:hover{
     color:#3cb49a;
 }
 @media screen and (min-width: 1024px) {
@@ -776,8 +776,9 @@ ul.cat-list li.list-title{
 }
 @media screen and (min-width: 1024px) {
 .story-block-large .text h3 {
-    font-size: 36px;
+    font-size: 34px;
     line-height: 1;
+    margin-bottom:10px;
 }
 }
 .story-block .text p {
@@ -798,7 +799,7 @@ ul.cat-list li.list-title{
 .pdb-tabd{
     display: none;
 }
-@media screen and (min-width: 768px) {
+
 .pdb-tabs {
         display: block;
         padding: 20px 15px 30px;
@@ -867,7 +868,7 @@ ul.cat-list li.list-title{
     .pdb-tabs button.current:last-child {
         margin-left: -1px
     }
-}
+
 
 .tab_container {
   background: transparent;
@@ -943,6 +944,75 @@ height:100%;
     text-transform: uppercase;
     letter-spacing: .03em;
 }
+.sidebar-footer{
+    background:#000;
+    padding:15px;
+    text-align: center;
+}
+.sidebar-footer a {
+    color:#3cb49a;
+}
+.sidebar-footer a:hover{
+    color:#fff;
+}
+.story-type{
+    background:#262626;
+}
+ul.also-read li a{
+    margin: 0 0 7px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333;
+    text-transform: none;
+    letter-spacing: -.015em;
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    font-weight: 500;
+    padding-left: 4.6875%;
+    padding-right: 4.6875%;
+    display: block;
+}
+ul.also-read li{
+    border-top:1px solid #ccc;
+    padding:10px 0;
+}
+.video-section .video-section_header {
+   position: relative;
+   padding:30px 0;
+   text-align: center;
+   background:url(../img/bg.jpg) no-repeat top right #3cb49a;
+}
+.video-section .video-section_header:before{
+    position: absolute;
+    content:"";
+    top:0;
+    left:0;
+    right:0;
+    margin:0 auto;
+    width:0;
+    height:0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 20px solid #262626;
+}
+.video-section .video-section_header h2{
+   color:#fff;
+   font-family: 'PT Sans Narrow', Arial, sans-serif;
+   font-size: 44px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+.video-section .video-section_header p{
+    color:#fff;
+}
+.section.video-section {
+    padding-top:0;
+}
+.video-section_content{
+    background:#262626;
+    padding:30px 0 0  60px;
+}
+
 /* ==========================================================================
   slider
   ========================================================================== */

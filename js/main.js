@@ -35,15 +35,38 @@ $(document).ready(function () {
         scope: '.home-slider' // Parent selector that surrounds your Swiper html & Swiper thumbnail html to support multiple Swiper instances on one page.
     });
 
-});
+
+	var homeswiper = new Swiper('#swiper-author', {
+	loop:false,
+    slidesPerView: 5,
+    spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+	});
+
+   
+	$(".author-slide").hover(function(){
+		var dataid = $(this).data("id");	
+		$('.text-default').removeClass("active");
+		$('#author-'+ dataid).addClass("active");
+		console.log(dataid);
+		},function(){
+		$('.author-content_text').removeClass("active");
+		$('.text-default').addClass("active");
+	});
 
 $('.home-slider').imagesLoaded( function() {
   $('.home-slider').addClass('images-loaded');
+
+});
 
 
   $('.tab_content').hide();
   $('.tab_content:first').show();
   $('.pdb-tabs button:first').addClass('current');
+
   $('.pdb-tabs button').click(function(event) {
     $('.pdb-tabs button').removeClass('current');
     $(this).addClass('current');

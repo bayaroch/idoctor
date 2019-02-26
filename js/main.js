@@ -36,14 +36,22 @@ $(document).ready(function () {
     });
 
 
-	var homeswiper = new Swiper('#swiper-author', {
+	var authorswiper = new Swiper('#swiper-author', {
 	loop:false,
     slidesPerView: 5,
     spaceBetween: 10,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+     breakpoints: {
+        1024: {
+          slidesPerView: 'auto',
+          spaceBetween: 10,
+        },
+    },
+
+	  navigation: {
+	    nextEl: '.swiper-button-next',
+	    prevEl: '.swiper-button-prev',
+	  },
+
 	});
 
    

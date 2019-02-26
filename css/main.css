@@ -1160,6 +1160,7 @@ ul.also-read li{
 .section-author{
     background:#3cb49a;
     margin-top:50px;
+    padding-bottom:30px;
 }
 .author-slide{
     width:150px;
@@ -1252,7 +1253,114 @@ ul.also-read li{
 }
 footer.footer{
     background:#3cb49a;
+    padding:0;
+    position: relative;
+}
+.footer-bottom{
+    padding-top:60px;
+    position: relative;
+}
+.footer-bottom:before, .footer-bottom:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+ .footer-bottom:before {
+    top: 0;
+    background: #FFF;
+    background: linear-gradient(to right,transparent 0,#FFF calc(50% - 21px),transparent calc(50% - 20px),transparent calc(50% + 22px),#FFF calc(50% + 23px),transparent 100%);
+    margin: auto;
+    z-index: 3;
+    height: 1px;
+}
+.footer-bottom;:after{
+    top: -75px;
+    background: #000;
+}
+.arrow{
+    width:42px;
+    height:42px;
+    border:2px solid #fff;
+    display: block;
+    border-radius:42px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
+    top:-21px;
+}
+.arrow i {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    line-height: 42px;
+}
+.follow-us{
+    text-align: center;
+    color:#fff;
+    font-size:18px;
+}
+.social-footer{
+    display: inline-block;
+    margin:0 auto;
+}
+.social-footer li {
+    float:left;
+
+}
+.social-footer li a {
+    width:60px;
+    height:60px;
+    border-radius:60px;
+    transition: all .3s ease-in-out;
+    border:2px solid #fff;
+    display: block;
+    position: relative;
+    margin:0 7px;
+}
+.social-footer li a:hover{
+    background:#fff;
+}
+.social-footer li a:hover i {
+    color:#3cb49a;
+}
+.social-footer li a i {
+    color:#fff;
+    font-size:26px;
+    line-height: 58px;
+    display: block;
+    text-align: center;
+}
+.social-center{
+    text-align: center;
+    margin:30px 0;
+}
+.footer-menu{
     border-top:1px solid #5cdcc0;
+    text-align: center;
+
+}
+.f-menu_list{
+    display: inline-block;
+}
+.f-menu_list li {
+    float:left;
+}
+.f-menu_list li a{
+    margin:0 20px;
+    padding:10px  0 5px 0;
+     font-family: 'PT Sans Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    color:#fff;
+    display: block;
+    line-height: 1.2;
+    font-size:16px;
+}
+.f-menu_list li a:hover{
+    opacity: 0.7;
 }
 /* ==========================================================================
   slider

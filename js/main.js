@@ -38,7 +38,7 @@ $(document).ready(function () {
 
 	var authorswiper = new Swiper('#swiper-author', {
 	loop:false,
-    slidesPerView: 5,
+    slidesPerView: 'auto',
     spaceBetween: 10,
      breakpoints: {
         1024: {

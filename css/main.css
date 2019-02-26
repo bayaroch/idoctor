@@ -114,7 +114,7 @@ body{
    ========================================================================== */
 
 .container{
-    max-width: 1200px;
+    max-width: 1370px;
     margin:0 auto;
     width:100%;
     padding-left:1.5rem;
@@ -123,7 +123,7 @@ body{
 }
 @media screen and (min-width: 1280px) {
 .container {
-    max-width: 1200px;
+    max-width: 1370px;
     width: 100%;
     padding:0;
 }
@@ -1010,7 +1010,7 @@ ul.also-read li{
 }
 .video-section_content{
     background:#262626;
-    padding:30px 0  30px 0;
+    padding:40px 0  30px 0;
     margin:0;
 }
 .big-video_news{

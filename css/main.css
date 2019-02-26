@@ -1240,7 +1240,7 @@ ul.also-read li{
     left:0;
     height:auto;
     opacity: 0;
-     transition: all .3s ease-in-out;
+     transition: all .6s ease-in-out;
     visibility: hidden;
 }
 .author-content_text.active{
@@ -1249,6 +1249,10 @@ ul.also-read li{
 }
 .author-content_text.text-default{
     color:#7ff4db;
+}
+footer.footer{
+    background:#3cb49a;
+    border-top:1px solid #5cdcc0;
 }
 /* ==========================================================================
   slider

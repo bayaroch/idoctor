@@ -1,6 +1,9 @@
  .home-slider .swiper-slide .slide-content h2{
     font-family: 'PT Sans Narrow', Arial, sans-serif;
  }
+.home-slider{
+    min-height:100vh;
+}
 
 .home-slider {
         position: relative;
@@ -340,6 +343,10 @@
         transform:none;
 
     }
+    .home-slider{
+        min-height: 450px;
+        max-height:calc(100vh - 100px);
+    }  
 }
 
 @media screen and (max-width:1023px) {
@@ -885,9 +892,6 @@
     .home-slider {
         display: none
     }
-}
-.home-slider{
-    min-height:100vh;
 }
 
 @-webkit-keyframes zoombounceIn {

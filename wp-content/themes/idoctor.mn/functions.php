@@ -92,14 +92,23 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
+    /*	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+        wp_enqueue_script('conditionizr'); // Enqueue it!*/
 
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
+        wp_register_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-3.6.0.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
+        wp_register_script('swiperjs', get_template_directory_uri() . '/js/swiper/js/swiper.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('swiperjs'); // Enqueue it!
+
+        wp_register_script('imagepreload', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('imagepreload'); // Enqueue it!
+
+        wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('plugins'); // Enqueue it!
+
+        wp_register_script('mainscripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('mainscripts'); // Enqueue it!
     }
 }
 
@@ -115,11 +124,20 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
+    wp_register_style('swipercss', get_template_directory_uri() . '/js/swiper/css/swiper.css', array(), '1.0', 'all');
+    wp_enqueue_style('swipercss'); // Enqueue it!
+
+    wp_register_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('bulma'); // Enqueue it!
+
+    wp_register_style('wpdefault', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('wpdefault'); // Enqueue it!
+
+    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+    wp_enqueue_style('main'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation

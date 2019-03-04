@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-
-	<main role="main">
-	<!-- section -->
-	<section>
+<main class="main">
+<div class="post-container">
+	<div class="columns">
+		<div class="column is-three-quarters">
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -39,7 +39,6 @@
 
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<?php comments_template(); ?>
 
 		</article>
 		<!-- /article -->
@@ -57,11 +56,14 @@
 		<!-- /article -->
 
 	<?php endif; ?>
+	    </div>
+	    <div class="column">asdsaadasdasd</div>
 
-	</section>
-	<!-- /section -->
-	</main>
+   </div>
 
-<?php get_sidebar(); ?>
+</div>
+
+</main>
+
 
 <?php get_footer(); ?>

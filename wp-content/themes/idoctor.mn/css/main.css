@@ -1400,9 +1400,16 @@ footer.footer{
     color:#aaa;
     line-height:38px;
 }
+.post-container{
+    width:880px;
+    padding:50px 15px;
+    margin:0 auto;
+}
 
-
-
+main.main{
+    margin-top:44px;
+    margin-bottom:20px;
+}
 
 
 @media screen and (max-width:1200px) {

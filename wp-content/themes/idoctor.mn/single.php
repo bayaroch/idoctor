@@ -24,7 +24,7 @@
 			<!-- /post title -->
 
 			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+			<span class="date"><?php the_time('Y.m.d'); ?> <?php the_time('g:i a'); ?></span>
 			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
 			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 			<!-- /post details -->
@@ -57,7 +57,19 @@
 
 	<?php endif; ?>
 	    </div>
-	    <div class="column">asdsaadasdasd</div>
+	    <div class="column">
+	    	<div class="post-info">
+	    		<div class="total_views_count"><i class="fas fa-eye"></i>2300</div>
+	    		<div class="post_date_info"><i class="far fa-clock"></i><?php the_time('Y.m.d'); ?></div>
+	    	</div>
+	    	<div class="post-info">
+	    		<p>Нийтлэсэн:</p>
+	    		<div class="author_name_single">Б.Жаргалмаа</div>
+	    		<div class="author_image_single">
+	    			<img src="img/test-author1.png" alt="image" />
+	    		</div>
+	    	</div>
+	    </div>
 
    </div>
 

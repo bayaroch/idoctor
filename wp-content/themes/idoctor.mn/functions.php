@@ -105,8 +105,9 @@ function html5blank_header_scripts()
         wp_register_script('imagepreload', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('imagepreload'); // Enqueue it!
 
-        wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('plugins'); // Enqueue it!
+    
+        wp_register_script('parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('parallax'); // Enqueue it!
 
         wp_register_script('mainscripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('mainscripts'); // Enqueue it!
@@ -116,9 +117,10 @@ function html5blank_header_scripts()
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
+    if (is_front_page()) {
+        wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('plugins'); // Enqueue it!
+
     }
 }
 

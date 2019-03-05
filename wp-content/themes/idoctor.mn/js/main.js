@@ -68,8 +68,8 @@ $(function() {
 
 $('.home-slider').imagesLoaded( function() {
   $('.home-slider').addClass('images-loaded');
-
 });
+
 
 
   $('.tab_content').hide();
@@ -85,6 +85,11 @@ $('.home-slider').imagesLoaded( function() {
 
     $("#"+selectTab).fadeIn();
   });
+
+});
+
+$('.post-image').imagesLoaded( function() {
+  $('.image-wrapper').addClass('loaded');
 
 });
 

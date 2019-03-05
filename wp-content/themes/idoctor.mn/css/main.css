@@ -1423,6 +1423,36 @@ main.main{
 .total_views_count, .post_date_info {
     padding-bottom:5px;
 }
+.author_name_single{
+    color:#3cb49a;
+    font-size:16px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+.author_image_single{
+    width:70px;
+    border-radius:70px;
+    overflow:hidden;
+    height:70px;
+}
+.image-wrapper {
+    opacity: 0;
+        transition: opacity 1s;
+         position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+   transform: translateZ(-1px);
+}
+.image-wrapper.loaded{
+    opacity: 1;
+}
+.post-image{
+    height:calc(100vh - 44px);
+    overflow:hidden;
+    position: relative;
+}
 @media screen and (max-width:1200px) {
     nav.main-menu {
         display: none;

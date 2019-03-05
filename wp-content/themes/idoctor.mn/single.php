@@ -1,20 +1,21 @@
 <?php get_header(); ?>
 <main class="main">
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>	
+<div class="post-image">
+   
+	   <div class="image-wrapper">				<?php the_post_thumbnail('big'); // Fullsize image for the single post ?> </div>
+</div>
 <div class="post-container">
 	<div class="columns">
 		<div class="column is-three-quarters">
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
 
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
+		
 			<!-- /post thumbnail -->
 
 			<!-- post title -->
@@ -66,7 +67,7 @@
 	    		<p>Нийтлэсэн:</p>
 	    		<div class="author_name_single">Б.Жаргалмаа</div>
 	    		<div class="author_image_single">
-	    			<img src="img/test-author1.png" alt="image" />
+	    			<img src="<?php echo get_template_directory_uri(); ?>/img/test-author.png" alt="image" />
 	    		</div>
 	    	</div>
 	    </div>

@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <main class="main">
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>	
 		<div class="post-image">
@@ -29,6 +30,7 @@
 		<div class="post-container">
 			<div class="columns">
 				<div class="column is-three-quarters content-column">
+					<div class="content">
 
 
 
@@ -55,6 +57,8 @@
 					<!-- /article -->
 
 				<?php endif; ?>
+
+			       </div>
 			</div>
 			<div class="column">
 				<div class="post-info">
@@ -65,9 +69,18 @@
 					<p>Нийтлэсэн:</p>
 					<div class="author_name_single"><?php the_author_posts_link(); ?></div>
 					<div class="author_image_single">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/test-author.png" alt="image" />
+						<?php
+						 $author_id = get_the_author_meta('ID');
+						 $avatar_url = get_field( "avatar" ,'user_'. $author_id); 
+						 ?>
+						<img src="<?php echo $avatar_url ?>" alt="image" />
 					</div>
 				</div>
+				<div class="post-info">
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox_lzti"></div>
+                </div>
+            
 			</div>
 
 		</div>
@@ -76,5 +89,7 @@
 
 </main>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e83ff6441206ade"></script>
 
 <?php get_footer(); ?>

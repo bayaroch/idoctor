@@ -41,7 +41,9 @@
 body{
     font-family: 'SF Pro Display';
     font-weight:400;
-    font-size:14px}
+    font-size:15px;
+    color:#444;
+}
     ::-moz-selection {
         background: #b3d4fc;
         text-shadow: none;
@@ -1403,6 +1405,15 @@ footer.footer{
 .post-container{
     width:880px;
     padding:50px 15px;
+    margin:0 auto;
+}
+.content p{
+    margin-bottom:15px;
+    line-height: 1.7;
+}
+.content img {
+    max-width: 100%;
+    height:auto;
     margin:0 auto;
 }
 

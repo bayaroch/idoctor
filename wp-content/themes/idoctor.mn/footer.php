@@ -4,55 +4,15 @@
                           <div class="author-holder">
                            <div class="swiper-container" id="swiper-author">
                             <div class="swiper-wrapper">
-                              <div class="swiper-slide author-slide" data-id="1">
-                                <a href="#">
-                                  <div class="author-box">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/test-author.png" alt="author name" />
-                                    <div class="author-name"><h4>ОЧИР МӨНХЦЭЦЭГ</h4></div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="swiper-slide author-slide" data-id="2">
-                                <a href="#">
-                                  <div class="author-box">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/test-author1.png" alt="author name" />
-                                    <div class="author-name"><h4>ОЧИР МӨНХЦЭЦЭГ</h4></div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="swiper-slide author-slide" data-id="3">
-                                <a href="#">
-                                  <div class="author-box">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/test-author2.png" alt="author name" />
-                                    <div class="author-name"><h4>ОЧИР МӨНХЦЭЦЭГ</h4></div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="swiper-slide author-slide" data-id="4">
-                                <a href="#">
-                                  <div class="author-box">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/test-author3.png" alt="author name" />
-                                    <div class="author-name"><h4>Munkhsaikhan Ganchimeg</h4></div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div class="swiper-slide author-slide" data-id="5">
+                              <!-- <div class="swiper-slide author-slide" data-id="6">
                                 <a href="#">
                                   <div class="author-box">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/test-author3.png" alt="author name" />
                                     <div class="author-name"><h4>ОЧИР МӨНХЦЭЦЭГ</h4></div>
                                   </div>
                                 </a>
-                              </div>
-
-                              <div class="swiper-slide author-slide" data-id="6">
-                                <a href="#">
-                                  <div class="author-box">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/test-author3.png" alt="author name" />
-                                    <div class="author-name"><h4>ОЧИР МӨНХЦЭЦЭГ</h4></div>
-                                  </div>
-                                </a>
-                              </div>
+                              </div> -->
+                              <?php get_author_list(); ?>
                             </div>
                             <!-- Add Arrows -->
                           </div>
@@ -61,12 +21,7 @@
                         </div>
 
                         <div class="author-bio">
-                          <div class="author-content_text" id="author-1">Энэ нь ижил төрлийн үйл ажиллагаа эрхлэгч нартаа үлгэр болж, технологийн болоод хэвлэл мэдээллийн салбарт түүчээ байх бидний эрхэм зорилгын нэгэн биелэл юм.</div>
-                          <div class="author-content_text" id="author-2">Энэ нь ижил төрлийн үйл ажиллагаа эрхлэгч нартаа үлгэр болж, технологийн болоод хэвлэл мэдээллийн салбарт түүчээ байх бидний эрхэм зорилгын нэгэн биелэл юм.</div>
-                          <div class="author-content_text" id="author-3">Энэ нь ижил төрлийн үйл ажиллагаа эрхлэгч нартаа үлгэр болж, технологийн болоод хэвлэл мэдээллийн салбарт түүчээ байх бидний эрхэм зорилгын нэгэн биелэл юм.</div>
-                          <div class="author-content_text" id="author-4">Энэ нь ижил төрлийн үйл ажиллагаа эрхлэгч нартаа үлгэр болж, технологийн болоод хэвлэл мэдээллийн салбарт түүчээ байх бидний эрхэм зорилгын нэгэн биелэл юм.</div>
-                          <div class="author-content_text" id="author-5">Энэ нь ижил төрлийн үйл ажиллагаа эрхлэгч нартаа үлгэр болж, технологийн болоод хэвлэл мэдээллийн салбарт түүчээ байх бидний эрхэм зорилгын нэгэн биелэл юм.</div>
-                          <div class="author-content_text" id="author-6">Энэ нь ижил төрлийн үйл ажиллагаа эрхлэгч нартаа үлгэр болж, технологийн болоод хэвлэл мэдээллийн салбарт түүчээ байх бидний эрхэм зорилгын нэгэн биелэл юм.</div>
+                          <?php get_author_bio();?>
                           <div class="author-content_text text-default active">Та бүхэнд Мэдээний нүүр хуудаст нийтлэгдэж буй бүх төрлийн контент дахь нийтлэлийн болоод үйл ажиллагааны бодлогоо танилцуулж байна.</div>
                         </div>
 

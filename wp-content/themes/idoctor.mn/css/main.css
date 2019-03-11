@@ -192,6 +192,7 @@ nav.main-menu ul li a{
     padding:0 20px;
     font-size:0.781rem;
     line-height:44px;
+    text-transform: uppercase;
     display: block;
 }
 nav.main-menu ul li a:hover{
@@ -1394,10 +1395,20 @@ footer.footer{
     color:#000;
     background:#efefef;
 }
-.m-menu li a i {
+.m-menu li a:after {
+    font-family: "Font Awesome 5 Free";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    text-rendering: auto;
+    line-height: 1;
     position: absolute;
     right:8px;
     top:0;
+    content: "\f105";
     bottom:0;
     color:#aaa;
     line-height:38px;

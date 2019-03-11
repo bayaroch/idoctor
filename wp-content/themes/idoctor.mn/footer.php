@@ -49,11 +49,7 @@
                     <div class="footer-menu">
                       <div class="container">
                         <ul class="f-menu_list clearfix">
-                            <li><a href="">БИДНИЙ ТУХАЙ</a></li>
-                            <li><a href="">АВТОРУУД</a></li>
-                            <li><a href="">ХАМТРАН АЖИЛЛАХ </a></li>
-                            <li><a href="">АРХИВ</a></li>
-                            <li><a href="">ХОЛБОО БАРИХ</a></li>
+                           <?php footer_nav(); ?>
                                                                        
                         </ul>
                       </div>

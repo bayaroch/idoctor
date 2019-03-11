@@ -24,11 +24,7 @@
 			</div>
 			<nav class="main-menu">
 				<ul class="menu clearfix">
-					<li><a href="#">МЭДЭЭ</a></li>
-					<li><a href="#">ӨГҮҮЛЭЛ</a></li>
-					<li><a href="#">ЯРИЛЦЛАГА</a></li>
-					<li><a href="#">ЦАХИМ ЭМЧ ШОУ</a></li>
-					<li><a href="#">ПОДКАСТ</a></li>
+					<?php header_nav(); ?>
 				</ul>
 			</nav>
 			<div class="tool-menu">
@@ -51,14 +47,9 @@
 
 		<div class="mobile-menu">
 			<div class="inner-mobile">
-				<ul class="m-menu">
-					<li><a href="#">МЭДЭЭ<i class="fas fa-angle-right"></i></a></li>
-					<li><a href="#">НИЙТЛЭЛ<i class="fas fa-angle-right"></i></a></li>
-					<li><a href="#">ЯРИЛЦЛАГА<i class="fas fa-angle-right"></i></a></li>
-					<li><a href="#">ЦАХИМ ЭМЧ ШОУ<i class="fas fa-angle-right"></i></a></li>
-					<li><a href="#">ЭКСПЕРТҮҮД<i class="fas fa-angle-right"></i></a></li>
-				</ul>
-
+				<ul class="m-menu clearfix">
+				<?php side_nav(); ?>
+			    </ul>
 			</div>
 		</div>
 

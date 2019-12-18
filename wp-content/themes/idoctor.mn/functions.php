@@ -32,7 +32,7 @@ if (function_exists('add_theme_support'))
     add_image_size('author', 200, 240, true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('category', 1400, 400, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('category', 1600, 400, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
@@ -136,6 +136,30 @@ function footer_nav()
     );
 }
 
+
+function brand_nav()
+{
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'brand-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'cat-list',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'depth'           => 0,
+        'walker'          => ''
+        )
+    );
+}
+
 function remove_ul ( $menu ){
     return preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $menu );
 }
@@ -192,7 +216,7 @@ function html5blank_styles()
     wp_register_style('wpdefault', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('wpdefault'); // Enqueue it!
 
-    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.6', 'all');
     wp_enqueue_style('main'); // Enqueue it!
 }
 
@@ -201,8 +225,9 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Side Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Footer Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'side-menu' => __('Side Menu', 'html5blank'), // Sidebar Navigation
+        'extra-menu' => __('Footer Menu', 'html5blank'), // Extra Navigation if needed (duplicate as many as you need!)
+        'brand-menu' => __('Brand Menu', 'html5blank'),
     ));
 }
 
@@ -426,7 +451,7 @@ add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
-remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery Post endpoint, EditURI link
 remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
 remove_action('wp_head', 'index_rel_link'); // Index link
 remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
@@ -503,6 +528,79 @@ function create_post_type_video()
     ));
 }
 
+add_action( 'init', 'create_area_taxonomies', 0 );
+
+// create two taxonomies, genres and writers for the post type "book"
+function create_area_taxonomies() {
+
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name'                       => _x( 'Post Brand', 'brand', 'html5blank' ),
+    'singular_name'              => _x( 'Post Brand', 'brand', 'html5blank' ),
+    'search_items'               => __( 'Search Post Brands', 'html5blank' ),
+    'popular_items'              => __( 'Popular Post Brands', 'html5blank' ),
+    'all_items'                  => __( 'All Post Brands', 'html5blank' ),
+    'parent_item'                => null,
+    'parent_item_colon'          => null,
+    'edit_item'                  => __( 'Edit Post Brands', 'html5blank' ),
+    'update_item'                => __( 'Update Post Brands', 'html5blank' ),
+    'add_new_item'               => __( 'Add New Post Brands', 'html5blank' ),
+    'new_item_name'              => __( 'New Post Brands', 'html5blank' ),
+    'separate_items_with_commas' => __( 'Separate Area with commas', 'html5blank' ),
+    'add_or_remove_items'        => __( 'Add or remove Post Brands', 'html5blank' ),
+    'choose_from_most_used'      => __( 'Choose from the most used Post Brands', 'html5blank' ),
+    'not_found'                  => __( 'No Post Brands found.', 'html5blank' ),
+    'menu_name'                  => __( 'Post Brands', 'html5blank' ),
+  );
+
+  $args = array(
+    'hierarchical'          => true,
+    'labels'                => $labels,
+    'show_ui'               => true,
+    'show_admin_column'     => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'b' ),
+     'exclude_from_search' => false,
+  );
+
+  register_taxonomy( 'brand', 'post', $args );
+
+
+   // Add new taxonomy, NOT hierarchical (like tags)
+  $typelabels = array(
+    'name'                       => _x( 'Post type', 'Post type', 'html5blank' ),
+    'singular_name'              => _x( 'Post type', 'Post type', 'html5blank' ),
+    'search_items'               => __( 'Search Post type', 'html5blank' ),
+    'popular_items'              => __( 'Popular Post type', 'html5blank' ),
+    'all_items'                  => __( 'All Post type', 'html5blank' ),
+    'parent_item'                => null,
+    'parent_item_colon'          => null,
+    'edit_item'                  => __( 'Edit Post type', 'html5blank' ),
+    'update_item'                => __( 'Update Post type', 'html5blank' ),
+    'add_new_item'               => __( 'Add New Post type', 'html5blank' ),
+    'new_item_name'              => __( 'New Post type Name', 'html5blank' ),
+    'separate_items_with_commas' => __( 'Separate Post type with commas', 'html5blank' ),
+    'add_or_remove_items'        => __( 'Add or remove Post type', 'html5blank' ),
+    'choose_from_most_used'      => __( 'Choose from the most used Post type', 'html5blank' ),
+    'not_found'                  => __( 'No Post type found.', 'html5blank' ),
+    'menu_name'                  => __( 'Post type', 'html5blank' ),
+  );
+
+  $typeargs = array(
+    'hierarchical'          => true,
+    'labels'                => $typelabels,
+    'show_ui'               => true,
+    'show_admin_column'     => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 't' ),
+     'exclude_from_search' => false,
+  );
+
+  register_taxonomy( 'type', 'post', $typeargs );
+
+}
 
 /*------------------------------------*\
 	ShortCode Functions
@@ -521,6 +619,6 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 }
 
 require_once( get_template_directory() . '/helpers/authors.php');
-
+require_once( get_template_directory() . '/helpers/posts.php');
 
 ?>

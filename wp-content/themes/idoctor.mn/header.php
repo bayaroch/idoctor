@@ -19,7 +19,7 @@
 		<!-- HEADER-->
 		<header class="header-main">
 			<div class="left-side">
-				<a class="logo-brand"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-dark.svg" alt="logo" /></a>
+				<a href="/" class="logo-brand"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-dark.svg" alt="logo" /></a>
 				<div class="slogan">БАТАЛГААТ ЭХ СУРВАЛЖ</div>
 			</div>
 			<nav class="main-menu">

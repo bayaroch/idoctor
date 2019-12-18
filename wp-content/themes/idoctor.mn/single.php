@@ -40,7 +40,7 @@
 						<?php the_content(); // Dynamic Content ?>
 
 						<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
+                        <?php setPostViews(get_the_ID()); ?>
 					</article>
 					<!-- /article -->
 
@@ -62,7 +62,7 @@
 			</div>
 			<div class="column">
 				<div class="post-info">
-					<div class="total_views_count"><i class="fas fa-eye"></i>2300</div>
+					<div class="total_views_count"><i class="fas fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></div>
 					<div class="post_date_info"><i class="far fa-clock"></i><?php the_time('Y.m.d'); ?></div>
 				</div>
 				<div class="post-info">

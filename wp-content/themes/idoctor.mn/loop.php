@@ -1,43 +1,31 @@
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	<div class="columns story-block">
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+			<div class="column is-one-third">
+				<article class="story-large card" id="post-<?php the_ID(); ?>">
+					<div class="image">
+						<a href="#">
+							<picture>
+								<img src="http://dev.idoctor.com/wp-content/themes/idoctor.mn/img/small-pic2.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
+							</picture>
+						</a>
+					</div>
+					<div class="text pt10">
+						<a href="#">
+							<h3>Эрүүл мэндийн ямар ч асуудалгүй үедээ жирэмсэлбэл хүүхдийн дархлаа сайн </h3>
+							<p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p>
+						</a>
+						</div>
+					</article>
+				</div>
+			<?php endwhile; ?>
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php else: ?>
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+				<!-- article -->
+				<article>
+					<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+				</article>
+				<!-- /article -->
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
-
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-		<!-- /post details -->
-
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-
-		<?php edit_post_link(); ?>
-
-	</article>
-	<!-- /article -->
-
-<?php endwhile; ?>
-
-<?php else: ?>
-
-	<!-- article -->
-	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-	</article>
-	<!-- /article -->
-
-<?php endif; ?>
+			<?php endif; ?>
+		</div>

@@ -87,6 +87,11 @@ function side_nav()
 	);
 }
 
+function admin_style() {
+    wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/admin.css');
+}
+add_action('login_enqueue_scripts', 'admin_style');
+
 
 
 function header_nav()
@@ -494,11 +499,39 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
+function _post_type_rewrite() {
+    global $wp_rewrite;
+ 
+    // Set the query arguments used by WordPress
+    $queryarg = 'post_type=video&p=';
+ 
+    // Concatenate %cpt_id% to $queryarg (eg.. &p=123)
+    $wp_rewrite->add_rewrite_tag( '%cpt_id%', '([^/]+)', $queryarg );
+ 
+    // Add the permalink structure
+    $wp_rewrite->add_permastruct( 'video', '/video/%cpt_id%/', false );
+}
+add_action( 'init', '_post_type_rewrite' );
+
+function _post_type_permalink( $post_link, $id = 0, $leavename ) {
+    global $wp_rewrite;
+    $post = get_post( $id );
+    if ( is_wp_error( $post ) )
+        return $post;
+        $newlink = $wp_rewrite->get_extra_permastruct( 'video' );
+ 
+        // Replace %cpt_id% in permalink structure with actual post ID
+        $newlink = str_replace( '%cpt_id%', $post->ID, $newlink );
+        $newlink = home_url( user_trailingslashit( $newlink ) );
+    return $newlink;
+}
+add_filter('post_type_link', '_post_type_permalink', 1, 3);
+
+
+
 function create_post_type_video()
 {
-    register_taxonomy_for_object_type('category', 'video'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'video');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_post_type('video', // Register Custom Post Type
         array(
         'labels' => array(
             'name' => __('Video post', 'html5blank'), // Rename these to suit
@@ -520,10 +553,10 @@ function create_post_type_video()
         'supports' => array(
             'title',
             'editor',
-            'excerpt',
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
+        'rewrite' => array( 'slug' => 'video' ),
     ));
 }
 

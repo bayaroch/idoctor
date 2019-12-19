@@ -24,51 +24,67 @@ $(function() {
 
 	});
 
-	var homeswiper = new Swiper('#swiper-home', {
-	loop:true,
-	allowTouchMove:false,
-	});
+  var $all_oembed_videos = $("iframe[src*='youtube']");
+  
+  $all_oembed_videos.each(function() {
     
-    swiperThumbs(homeswiper, {
+    $(this).removeAttr('height').removeAttr('width').wrap( "<div class='embed-container'></div>" );
+    
+  });
+
+  $(window).on('resize', function(){
+   $all_oembed_videos.each(function() {
+    
+    $(this).removeAttr('height').removeAttr('width').wrap( "<div class='embed-container'></div>" );
+    
+  });
+ });
+
+  var homeswiper = new Swiper('#swiper-home', {
+   loop:true,
+   allowTouchMove:false,
+ });
+  
+  swiperThumbs(homeswiper, {
         // Our default options
         element: 'c11',
         activeClass: 'swiper-pagination-bullet-active',
         scope: '.home-slider' // Parent selector that surrounds your Swiper html & Swiper thumbnail html to support multiple Swiper instances on one page.
-    });
+      });
 
 
-	var authorswiper = new Swiper('#swiper-author', {
-	loop:false,
-    slidesPerView: 'auto',
-    spaceBetween: 10,
-     breakpoints: {
-        1024: {
-          slidesPerView: 'auto',
-          spaceBetween: 10,
-        },
+  var authorswiper = new Swiper('#swiper-author', {
+   loop:false,
+   slidesPerView: 'auto',
+   spaceBetween: 10,
+   breakpoints: {
+    1024: {
+      slidesPerView: 'auto',
+      spaceBetween: 10,
     },
+  },
 
-	  navigation: {
-	    nextEl: '.swiper-button-next',
-	    prevEl: '.swiper-button-prev',
-	  },
+  navigation: {
+   nextEl: '.swiper-button-next',
+   prevEl: '.swiper-button-prev',
+ },
 
-	});
-
-   
-	$(".author-slide").hover(function(){
-		var dataid = $(this).data("id");	
-		$('.text-default').removeClass("active");
-		$('#author-'+ dataid).addClass("active");
-		console.log(dataid);
-		},function(){
-		$('.author-content_text').removeClass("active");
-		$('.text-default').addClass("active");
-	});
-
-$('.home-slider').imagesLoaded( function() {
-  $('.home-slider').addClass('images-loaded');
 });
+
+  
+  $(".author-slide").hover(function(){
+    var dataid = $(this).data("id");	
+    $('.text-default').removeClass("active");
+    $('#author-'+ dataid).addClass("active");
+    console.log(dataid);
+  },function(){
+    $('.author-content_text').removeClass("active");
+    $('.text-default').addClass("active");
+  });
+
+  $('.home-slider').imagesLoaded( function() {
+    $('.home-slider').addClass('images-loaded');
+  });
 
 
 
@@ -88,14 +104,14 @@ $('.home-slider').imagesLoaded( function() {
 
 
   $('.img-parallax').each(function(){
-  var img = $(this);
-  var imgParent = $(this).parent();
-  function parallaxImg () {
-    var speed = img.data('speed');
-    var imgY = imgParent.offset().top;
-    var winY = $(this).scrollTop();
-    var winH = $(this).height();
-    var parentH = imgParent.innerHeight();
+    var img = $(this);
+    var imgParent = $(this).parent();
+    function parallaxImg () {
+      var speed = img.data('speed');
+      var imgY = imgParent.offset().top;
+      var winY = $(this).scrollTop();
+      var winH = $(this).height();
+      var parentH = imgParent.innerHeight();
 
 
     // The next pixel to show on screen      

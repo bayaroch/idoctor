@@ -1,0 +1,118 @@
+<?php get_header(); ?>
+
+<main class="main">
+	<?php if (have_posts()): while (have_posts()) : the_post(); ?>	
+		<div class="post-image">
+
+			<?php 
+			 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); 
+			 $video = get_field( 'video_url' );
+			 ?>
+
+
+			<div class="image-wrapper parallax-window"  data-parallax="scroll" data-image-src="<?php echo $image[0]; ?>">	
+
+			</div>
+
+			<div class="meta-data">
+				<div class="post-container">
+					<div class="headline-block">
+						<?php
+						// Get the ID of a given category
+						$category = get_the_category();
+                        $first_category = $category[0];
+						// Get the URL of this category
+						$category_link = get_category_link( $category[0]->term_id );
+						?>
+						<div class="category-link"><a class="" style="background-color:#c00; color:#fff" href="#">Видео контент</a></div>
+						<h1><?php the_title(); ?></h1>
+					</div>
+					<div class="author-top_holder"><span class="author-top"><span>Нийтлэгч</span>@<span><?php the_author_posts_link(); ?></span>
+						<span>
+							Төрөл: <a href="<?php echo $termlink; ?>">Видео</a>
+						</span>
+					</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="post-container">
+			<div class="columns">
+				<div class="column is-three-quarters content-column">
+					<div class="content">
+
+					<!-- article -->
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+						<?php the_content(); // Dynamic Content ?>
+
+						<?php if($video) { 
+							echo wp_oembed_get( $video, array('height' =>400)); 
+						}
+						?>
+
+						<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+                        <?php setPostViews(get_the_ID()); ?>
+					</article>
+					<!-- /article -->
+
+				<?php endwhile; ?>
+
+				<?php else: ?>
+
+					<!-- article -->
+					<article>
+
+						<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+
+					</article>
+					<!-- /article -->
+
+				<?php endif; ?>
+
+			       </div>
+			</div>
+			<div class="column">
+				<div class="post-info">
+						<?php 
+								$bterms = get_the_terms( $post->ID, 'brand');
+								$bterm = $bterms[0];
+								$btermname = $bterm->name;
+								$btermlink = get_term_link($bterm->slug, 'brand');
+						?>
+						<?php if ( !empty( $bterms ) ){ ?>
+							<div class="post-brand_info">
+							<a href="<?php echo $btermlink; ?>"><?php echo $btermname; ?></a>
+							</div>
+						<?php } ?>
+					<div class="total_views_count"><i class="fas fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></div>
+					<div class="post_date_info"><i class="far fa-clock"></i><?php the_time('Y.m.d'); ?></div>
+					<div class="post-tag_info"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>' ); // Separated by commas with a line break at the end. ?></div>
+				</div>
+				<div class="post-info">
+					<p>Нийтлэсэн:</p>
+					<div class="author_name_single"><?php the_author_posts_link(); ?></div>
+					<div class="author_image_single">
+						<?php
+						 $author_id = get_the_author_meta('ID');
+						 $avatar_url = get_field( "avatar" ,'user_'. $author_id); 
+						 ?>
+						<img src="<?php echo $avatar_url ?>" alt="image" />
+					</div>
+				</div>
+				<div class="post-info">
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox_lzti"></div>
+                </div>
+            
+			</div>
+
+		</div>
+
+	</div>
+
+</main>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e83ff6441206ade"></script>
+
+<?php get_footer(); ?>

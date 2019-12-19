@@ -187,39 +187,8 @@ get_header(); ?>
     </div>
     <div class="video-section_content">
       <div class="container">
-       <div class="columns">
-         <div class="column is-four-fifths">
-          <div class="big-video_news">
-            <span class="new-tag">ШИНЭ ДУГААР</span>
-            <a href="#">
-              <div class="big-video_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/video-image.jpg" alt="video"/>
-              </div>
-            </a>
-            <h2><a href="#">109 - Нүдээ хамгаалья / "Цахим Эмч" шоу</a></h2>
-            <p>Гар утас, таблет, зурагтны дэлгэцнээс ялгардаг хөх гэрэл нь нүдний хараанд сөргөөр нөлөөлдөг.</p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="small-video_news">
-            <a href="#">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/video-image.jpg" alt="video"/>
-              <h2>Нүдээ хамгаалья / "Цахим Эмч" шоу</h2>
-            </a>
-          </div>
-          <div class="small-video_news">
-            <a href="#">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/video-image.jpg" alt="video"/>
-              <h2>Нүдээ хамгаалья / "Цахим Эмч" шоу</h2>
-            </a>
-          </div>
-          <div class="small-video_news">
-            <a href="#">
-              <img src="<?php echo get_template_directory_uri(); ?>/img/video-image.jpg" alt="video"/>
-              <h2>Нүдээ хамгаалья / "Цахим Эмч" шоу</h2>
-            </a>
-          </div>
-
+        <div class="columns">
+         <?php get_latest_videos(); ?>
         </div>
       </div>
 

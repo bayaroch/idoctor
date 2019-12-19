@@ -78,7 +78,7 @@ function get_latest_posts_by_type($tax, $slug , $count) {
   echo "<article class='story-large card'>";
   $the_query->the_post();
   if ($i==0) { 
-    z ?>
+     ?>
     <div class="image">
       <a href="<?php the_permalink(); ?>">
         <picture>
@@ -179,7 +179,49 @@ wp_reset_query();
 }
 
 
+function get_latest_videos() {
+  // query latest news by term type
+  $args = array(  
+        'post_type' => 'video',
+        'post_status' => 'publish',
+        'posts_per_page' => 4, 
+  );
+  $loop = new WP_Query( $args ); 
 
+  $i=0; while ( $loop->have_posts() ) :
+  $loop->the_post();
+  if ($i==0) { 
+     ?>
+     <div class="column is-four-fifths">
+          <div class="big-video_news">
+            <span class="new-tag">ШИНЭ ДУГААР</span>
+            <a href="<?php the_permalink(); ?>">
+              <div class="big-video_image">
+                <?php the_post_thumbnail('large'); // Declare pixel size you need inside the array ?>
+              </div>
+            </a>
+            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <p><?php echo get_the_popular_excerpt(220); ?></p>
+          </div>
+      </div>
+    <?php
+    $i++;
+    echo  "<div class='column'>";
+  }
+  else{
+    ?>
+    <div class="small-video_news">
+            <a href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail('normal'); // Declare pixel size you need inside the array ?>
+              <h2><?php the_title(); ?></h2>
+            </a>
+    </div>
+    <?php
+  }
+endwhile;
+echo "</div>";
+wp_reset_query();
+}
 
 function get_the_popular_excerpt($length){
   $excerpt = get_the_content();

@@ -1,0 +1,10 @@
+body #login h1 a {
+  background-image: url('../img/logo-dark.svg') !important ;
+  width:200px;
+  background-size:60% 60%;
+  background-position: center center;
+  background-color:#0f385a;
+  height:auto;
+  padding:10px 10px;
+
+}

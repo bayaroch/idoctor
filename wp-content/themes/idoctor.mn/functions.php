@@ -1,10 +1,7 @@
 <?php
-/*
- *  Author: Todd Motto | @toddmotto
- *  URL: html5blank.com | @html5blank
- *  Custom functions, support, custom post types and more.
- */
-
+@ini_set( 'upload_max_size' , '10M' );
+@ini_set( 'post_max_size', '10M');
+@ini_set( 'max_execution_time', '300' );
 /*------------------------------------*\
 	External Modules/Files
 \*------------------------------------*/
@@ -28,7 +25,9 @@ if (function_exists('add_theme_support'))
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('big', 1600, '', true); // Large Thumbnail
-    add_image_size('large', 700, '', true); // Large Thumbnail
+    add_image_size('large', 1200, '', true); // Large Thumbnail
+    add_image_size('normal', 860, '', true); // Large Thumbnail
+     add_image_size('thumbnail', 493, 258, true); // Large Thumbnailss
     add_image_size('author', 200, 240, true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
@@ -216,7 +215,7 @@ function html5blank_styles()
     wp_register_style('wpdefault', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('wpdefault'); // Enqueue it!
 
-    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.6', 'all');
+    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.8', 'all');
     wp_enqueue_style('main'); // Enqueue it!
 }
 

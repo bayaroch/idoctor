@@ -20,10 +20,20 @@
 						// Get the URL of this category
 						$category_link = get_category_link( $category[0]->term_id );
 						?>
-						<div class="category-link"><a class="" href="<?php echo $category_link ?>"><?php echo $first_category->name ?></a></div>
+						<div class="category-link"><a class="" style="background-color:#0f385a;" href="<?php echo $category_link ?>"><?php echo $first_category->name ?></a></div>
 						<h1><?php the_title(); ?></h1>
 					</div>
-					<div class="author-top_holder"><span class="author-top"><span>Нийтлэгч</span>@<span><?php the_author_posts_link(); ?></span></span></div>
+					<div class="author-top_holder"><span class="author-top"><span>Нийтлэгч</span>@<span><?php the_author_posts_link(); ?></span>
+						<span>
+							<?php 
+								$terms = get_terms('type');
+								$term = $terms[0];
+								$termname = $term->name;
+								$termlink = get_term_link($term->slug, 'type');
+							?>
+							Төрөл: <a href="<?php echo $termlink; ?>"><?php echo $termname; ?></a>
+						</span>
+					</span></div>
 				</div>
 			</div>
 		</div>
@@ -31,8 +41,6 @@
 			<div class="columns">
 				<div class="column is-three-quarters content-column">
 					<div class="content">
-
-
 
 					<!-- article -->
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -62,8 +70,18 @@
 			</div>
 			<div class="column">
 				<div class="post-info">
+					<div class="post-brand_info">
+							<?php 
+								$terms = get_terms('brand');
+								$term = $terms[0];
+								$termname = $term->name;
+								$termlink = get_term_link($term->slug, 'brand');
+							?>
+							<a href="<?php echo $termlink; ?>"><?php echo $termname; ?></a>
+					</div>
 					<div class="total_views_count"><i class="fas fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></div>
 					<div class="post_date_info"><i class="far fa-clock"></i><?php the_time('Y.m.d'); ?></div>
+					<div class="post-tag_info"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>' ); // Separated by commas with a line break at the end. ?></div>
 				</div>
 				<div class="post-info">
 					<p>Нийтлэсэн:</p>

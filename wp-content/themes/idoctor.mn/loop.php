@@ -3,16 +3,16 @@
 			<div class="column is-one-third">
 				<article class="story-large card" id="post-<?php the_ID(); ?>">
 					<div class="image">
-						<a href="#">
+						<a href="<?php the_permalink(); ?>">
 							<picture>
-								<img src="http://dev.idoctor.com/wp-content/themes/idoctor.mn/img/small-pic2.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
+								 <?php the_post_thumbnail('thumbnail'); // Declare pixel size you need inside the array ?>
 							</picture>
 						</a>
 					</div>
 					<div class="text pt10">
-						<a href="#">
-							<h3>Эрүүл мэндийн ямар ч асуудалгүй үедээ жирэмсэлбэл хүүхдийн дархлаа сайн </h3>
-							<p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p>
+						<a href="<?php the_permalink(); ?>">
+							<h3><?php the_title(); ?></h3>
+							<p><?php echo get_the_popular_excerpt(220); ?></p>
 						</a>
 						</div>
 					</article>

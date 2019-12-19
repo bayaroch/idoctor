@@ -24,8 +24,8 @@ function setPostViews($postID) {
 }
 
 function popular_news(){
+  //popular posts in tabs front-page
   function filter_where($where = '') {
-    //posts in the last 30 days
     $where .= " AND post_date > '" . date('Y-m-d', strtotime('-30 days')) . "'";
     return $where;
   }
@@ -53,4 +53,142 @@ function popular_news(){
   remove_filter('posts_where', 'filter_where');
   wp_reset_query();
 
+}
+
+function get_latest_posts_by_type($tax, $slug , $count) {
+  // query latest news by term type
+  $slugname = $slug;
+  $countnumber = $count;
+  $taxonomy = $tax;
+  $term = get_term_by('slug', $slug, $tax);
+  $name = $term->name;
+  $link = get_term_link($term);
+  $the_query = new WP_Query( array(
+    'posts_per_page' => $countnumber,
+    'post_type' => 'post',
+    'tax_query' => array(
+      array (
+        'taxonomy' => $tax,
+        'field' => 'slug',
+        'terms' => $slugname,
+      )
+    ),
+  ) );
+  $i=0; while ( $the_query->have_posts() ) :
+  echo "<article class='story-large card'>";
+  $the_query->the_post();
+  if ($i==0) { 
+    z ?>
+    <div class="image">
+      <a href="<?php the_permalink(); ?>">
+        <picture>
+         <?php the_post_thumbnail('thumbnail'); // Declare pixel size you need inside the array ?>
+       </picture>
+     </a>
+   </div>
+   <div class="text">
+    <a href="<?php echo $link; ?>" class="cat-tag p-color"><?php echo $name; ?></a>
+    <a href="<?php the_permalink(); ?>">
+      <h3><?php the_title(); ?></h3>
+      <p><?php echo get_the_popular_excerpt(220); ?></p></a>
+    </div>
+    <?php
+    $i++;
+    echo "<ul class='also-read'>";
+  }
+  else{
+    ?>
+    <li><a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a></li>
+    <?php
+  }
+endwhile;
+echo "</ul></article>";
+wp_reset_query();
+}
+
+function get_latest_featured_post() {
+  $args = array(
+    'posts_per_page' => 1,
+    'post_type'   => 'post',
+    'meta_key'    => 'featured',
+    'meta_value'  => 'Yes'
+  );
+  $the_query = new WP_Query( $args );
+  ?>
+  <?php if( $the_query->have_posts() ): ?>
+    <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+      <article class="story-large card">
+        <div class="image">
+          <a href="<?php the_permalink(); ?>">
+             <?php the_post_thumbnail('large'); // Declare pixel size you need inside the array ?>
+          </a>
+        </div>
+        <div class="text">
+          <a href="" class="cat-tag p-color">ОНЦЛОХ</a>
+          <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3>
+            <p><?php echo get_the_popular_excerpt(250); ?></p>
+          </a>
+        </div>
+      </article>
+    <?php endwhile; ?>
+  <?php endif; ?>
+  <?php wp_reset_query(); 
+}
+
+
+function get_latest_post_by_type_single($tax, $slug , $count) {
+  // query latest news by term type
+  $slugname = $slug;
+  $countnumber = $count;
+  $taxonomy = $tax;
+  $term = get_term_by('slug', $slug, $tax);
+  $name = $term->name;
+  $link = get_term_link($term);
+  $the_query = new WP_Query( array(
+    'posts_per_page' => $countnumber,
+    'post_type' => 'post',
+    'tax_query' => array(
+      array (
+        'taxonomy' => $tax,
+        'field' => 'slug',
+        'terms' => $slugname,
+      )
+    ),
+  ) );
+  while ( $the_query->have_posts() ) :
+  $the_query->the_post();
+   ?>
+    <article class="story-large card">
+              <div class="image">
+                <a href="#">
+                  <picture>
+                    <?php the_post_thumbnail('normal'); // Declare pixel size you need inside the array ?>
+                  </picture>
+                </a>
+              </div>
+              <div class="text">
+                <a href="<?php echo $link; ?>" class="cat-tag p-color"><?php echo $name; ?></a>
+                <a href="<?php the_permalink(); ?>">
+                  <h3><?php the_title(); ?></h3>
+                  <p><?php echo get_the_popular_excerpt(220); ?></p></a>
+                </div>
+     </article>
+    <?php
+  endwhile;
+wp_reset_query();
+}
+
+
+
+
+function get_the_popular_excerpt($length){
+  $excerpt = get_the_content();
+  $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+  $excerpt = strip_shortcodes($excerpt);
+  $excerpt = strip_tags($excerpt);
+  $excerpt = substr($excerpt, 0, $length);
+  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+  $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+
+  return $excerpt;
 }

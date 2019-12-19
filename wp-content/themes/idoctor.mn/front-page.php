@@ -129,57 +129,16 @@ get_header(); ?>
         </div>
         <div class="column top-stories-column">
           <div class="story-block story-block-large">
-            <article class="story-large card">
-              <div class="image">
-                <a href="#">
-                  <picture>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/banner.jpg" alt="Motorcycling Through Colombia's White Mystery Powders" >
-                  </picture>
-                </a>
-              </div>
-              <div class="text">
-                <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="True Story">FIT ДОВТОЛГОО</a>
-                <a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                  <p>Амьсгалын замын цочмог халдварт өвчин нь халуурах, толгой өвдөх, ханиалгах, хамраас нус гоожих, үе мөч болон замын цочмог халдварт өвчин нь халуурах</p>
-                </a>
-              </div>
-            </article>
+          
+            <?php get_latest_post_by_type_single('brand', 'aminshim', 1); ?>
           </div>
 
           <div class="columns story-block">
            <div class="column">
-             <article class="story-large card">
-              <div class="image">
-                <a href="#">
-                  <picture>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/small-pic2.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
-                  </picture>
-                </a>
-              </div>
-              <div class="text">
-                <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="Flashback">Амин шим</a>
-                <a href="#">
-                  <h3>Эрүүл мэндийн ямар ч асуудалгүй үедээ жирэмсэлбэл хүүхдийн дархлаа сайн </h3>
-                  <p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p></a>
-                </div>
-              </article>
+             <?php get_latest_post_by_type_single('brand', 'fit', 1); ?>
             </div>
             <div class="column">
-              <article class="story-large card">
-                <div class="image">
-                  <a href="#">
-                    <picture>
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/small-pic1.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
-                    </picture>
-                  </a>
-                </div>
-                <div class="text">
-                  <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="Flashback">Амаржихуй Бойжихуй</a>
-                  <a href="#">
-                    <h3>Жимс, ногоог хэрхэн зөв хадгалах вэ?</h3>
-                    <p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p></a>
-                  </div>
-                </article>
+              <?php get_latest_post_by_type_single('brand', 'amarjihui', 1); ?>
               </div>
 
 
@@ -198,90 +157,17 @@ get_header(); ?>
         <div class="featured-news">
           <div class="top-stories-column">
             <div class="story-block story-block-large">
-              <article class="story-large card">
-                <div class="image">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/stress.jpg" alt="Motorcycling Through Colombia's White Mystery Powders" >
-                  </a>
-                </div>
-                <div class="text">
-                  <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="True Story">ОНЦЛОХ</a>
-                  <a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                    <p>Амьсгалын замын цочмог халдварт өвчин нь халуурах, толгой өвдөх, ханиалгах, хамраас нус гоожих, үе мөч болон замын цочмог халдварт өвчин нь халуурах </p>
-                  </a>
-                </div>
-
-              </article>
+              <?php get_latest_featured_post(); ?>
             </div>
             <div class="columns story-block">
              <div class="column">
-               <article class="story-large card">
-                <div class="image">
-                  <a href="#">
-                    <picture>
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/small-pic2.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
-                    </picture>
-                  </a>
-                </div>
-                <div class="text">
-                  <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="Flashback">МЭДЭЭ</a>
-                  <a href="#">
-                    <h3>Эрүүл мэндийн ямар ч асуудалгүй үедээ жирэмсэлбэл хүүхдийн дархлаа сайн </h3>
-                    <p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p></a>
-                  </div>
-                  <ul class="also-read">
-                   <li><a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                   </a></li>
-                   <li><a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                   </a></li>
-                 </ul>
-               </article>
+                <?php get_latest_posts_by_type ('type', 'news' , 3 ); ?>
              </div>
              <div class="column">
-              <article class="story-large card">
-                <div class="image">
-                  <a href="#">
-                    <picture>
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/small-pic1.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
-                    </picture>
-                  </a>
-                </div>
-                <div class="text">
-                  <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="Flashback">Өгүүлэл</a>
-                  <a href="#">
-                    <h3>Жимс, ногоог хэрхэн зөв хадгалах вэ?</h3>
-                    <p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p></a>
-                  </div>
-                  <ul class="also-read">
-                   <li><a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                   </a></li>
-                   <li><a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                   </a></li>
-                 </ul>
-               </article>
+              <?php get_latest_posts_by_type ('type', 'article' , 3 ); ?>
              </div>
              <div class="column">
-              <article class="story-large card">
-                <div class="image">
-                  <a href="#">
-                    <picture>
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/small-pic1.jpg" alt="How Dazzling Chinese Silk Defeated the Roman Army">
-                    </picture>
-                  </a>
-                </div>
-                <div class="text">
-                  <a href="#" class="cat-tag p-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="Flashback">Ярилцлага</a>
-                  <a href="#">
-                    <h3>Жимс, ногоог хэрхэн зөв хадгалах вэ?</h3>
-                    <p>Төрөл бүрийн жимс, хүнсний ногоо нь зохистой хооллолтын суурь болдог. Тэдгээр нь илчлэг багатай</p></a>
-                  </div>
-                  <ul class="also-read">
-                   <li><a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                   </a></li>
-                   <li><a href="#"><h3>Амьсгалын замын цочмог халдварт өвчнөөс сэргийлэх зөвлөмж</h3>
-                   </a></li>
-                 </ul>
-               </article>
+              <?php get_latest_posts_by_type ('type', 'interview' , 3 ); ?>
              </div>
            </div>
          </div>

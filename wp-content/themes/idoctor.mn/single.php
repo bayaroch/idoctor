@@ -70,15 +70,17 @@
 			</div>
 			<div class="column">
 				<div class="post-info">
-					<div class="post-brand_info">
-							<?php 
-								$terms = get_terms('brand');
-								$term = $terms[0];
-								$termname = $term->name;
-								$termlink = get_term_link($term->slug, 'brand');
-							?>
-							<a href="<?php echo $termlink; ?>"><?php echo $termname; ?></a>
-					</div>
+						<?php 
+								$bterms = get_the_terms( $post->ID, 'brand');
+								$bterm = $bterms[0];
+								$btermname = $bterm->name;
+								$btermlink = get_term_link($bterm->slug, 'brand');
+						?>
+						<?php if ( !empty( $bterms ) ){ ?>
+							<div class="post-brand_info">
+							<a href="<?php echo $btermlink; ?>"><?php echo $btermname; ?></a>
+							</div>
+						<?php } ?>
 					<div class="total_views_count"><i class="fas fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></div>
 					<div class="post_date_info"><i class="far fa-clock"></i><?php the_time('Y.m.d'); ?></div>
 					<div class="post-tag_info"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>' ); // Separated by commas with a line break at the end. ?></div>

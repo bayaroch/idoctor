@@ -1,7 +1,7 @@
 <?php get_header(); 
    $term = get_queried_object();
    $path = get_template_directory_uri();
-   $defaultimage = $path . "/img/category.jpg";
+   $defaultimage = $path . "/img/backgrounds/category.jpg";
    $image = get_field('category_image',$term);
    if (!empty($image)) {
     $show = $image;

@@ -1592,7 +1592,7 @@ main.main{
     opacity: 0.8;
 }
 .category-image .headline-block {
-    border-top:0 none;
+    border-top:1px solid #efefef;
     border-bottom:0 none;
 }
 .category-image .headline-block .category-link a {
@@ -1600,7 +1600,7 @@ main.main{
 }
 .category-image .headline-block .category-link {
     height: 20px;
-    top:0;
+    top:-10px;
 }
 .c-color{
     background-color: #0f385a;

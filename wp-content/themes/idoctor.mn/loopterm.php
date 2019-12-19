@@ -1,4 +1,4 @@
-	<div class="columns story-block">
+	<div class="columns is-multiline story-block">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<div class="column is-one-third">
 				<article class="story-large card" id="post-<?php the_ID(); ?>">

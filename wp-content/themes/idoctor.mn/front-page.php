@@ -126,7 +126,7 @@ get_header(); ?>
 
   </div>
   <div class="video-footer">
-    <p><i class="fab fa-youtube"></i><a href="#">ЭНД ДАРЖ</a> МАНАЙ YOUTUBE СУВАГТ НЭГДЭЭРЭЙ.  БҮХ ВИДЕО КОНТЕНТИЙГ ХҮЛЭЭН АВАХ БОЛОМЖТОЙ</p>
+    <p><i class="fab fa-youtube"></i><a target="_blank" href="https://www.youtube.com/tsahimemch">ЭНД ДАРЖ</a> МАНАЙ YOUTUBE СУВАГТ НЭГДЭЭРЭЙ.  БҮХ ВИДЕО КОНТЕНТИЙГ ХҮЛЭЭН АВАХ БОЛОМЖТОЙ</p>
   </div>
 
 </section>

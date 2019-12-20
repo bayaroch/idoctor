@@ -46,7 +46,7 @@ function get_author_list() {
           <div class="swiper-slide author-slide" data-id="<?php echo $author_id; ?>">
                                 <a href="<?php echo $author_profile_url; ?>">
                                   <div class="author-box">
-                                    <img src="<?php echo $avatar[0]; ?>" alt="<?php echo $display_name; ?>" />
+                                    <img src="<?php echo $avatar; ?>" alt="<?php echo $display_name; ?>" />
                                     <div class="author-name"><h4><?php echo $display_name; ?></h4></div>
                                   </div>
               </a>

@@ -5,63 +5,7 @@ get_header(); ?>
 <div class="home-slider">
   <div class="swiper-container" id="swiper-home">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <a href="">
-          <div class="slide-image">
-            <picture>
-              <img src="<?php echo get_template_directory_uri(); ?>/img/banner.jpg"  alt="banner"/>
-            </picture>
-          </div>
-          <div class="slide-content">
-            <div class="slide-content-sleeve">
-              <p class="story-number">
-                <span>1</span>
-                <span class="c3">Ярилцлага</span>
-              </p>
-              <h2>Мах идэхэд хүний биед дотоод хүчилшилт орчин үүсдэг</h2>
-              <p>Шүлтлэг орчин үүсгэдэг хоолоор хүчилшилт орчноо тэнцвэржүүлэхгүй бол олон өвчний суурь нөхцөл болдог.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="">
-          <div class="slide-image">
-            <picture>
-              <img src="<?php echo get_template_directory_uri(); ?>/img/banner2.jpg"  alt="banner"/>
-            </picture>
-          </div>
-          <div class="slide-content">
-            <div class="slide-content-sleeve">
-              <p class="story-number">
-                <span>1</span>
-                <span class="c3">Fast Forward</span>
-              </p>
-              <h2>Эрүүл ХООЛЛОЛТЫН тухай сонирхолтой 5 БАРИМТ</h2>
-              <p>Тэгэхээр би бол хүний их эмч. Хүний биеийн махбодийн бодисын солилцоо, шим тэжээл, хоол зүй, спорт, амьдралын хэв маяг чиглэлд судалдаг. Харин ажиллаж байгаа салбар маань нийгмийн эрүүл мэнд байгаа юм..&nbsp;</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="">
-          <div class="slide-image">
-            <picture>
-              <img src="<?php echo get_template_directory_uri(); ?>/img/banner3.jpg"  alt="banner"/>
-            </picture>
-          </div>
-          <div class="slide-content">
-            <div class="slide-content-sleeve">
-              <p class="story-number">
-                <span>1</span>
-                <span class="c3">Fast Forward</span>
-              </p>
-              <h2>Цахим эмч Б.Баярбямба: Хүн дараах дөрвөн дүрмийг баримталбал эрүүл байна</h2>
-              <p>-Ажил, амьдралаа нэг хэмнэлд оруулахаас ер нь зайлсхийдэг. Тогтоол ус өмхийрдөг гэдэг шүү дээ. Шинийг сэтгэж, шинийг эрэлхийлж, өөрийгөө хөгжүүлж байх нь чухал.&nbsp;</p>
-            </div>
-          </div>
-        </a>
-      </div>
+      <?php get_latest_featured_slider_post(3); ?>
     </div>
 
   </div>
@@ -69,9 +13,7 @@ get_header(); ?>
 
   <div class="home-slider-navigation">
     <ul class="c11">
-      <li class="swiper-pagination-bullet"><span><img src="<?php echo get_template_directory_uri(); ?>/img/thumb3.jpg" alt=""></span></li>
-      <li class="swiper-pagination-bullet"><span><img src="<?php echo get_template_directory_uri(); ?>/img/thumb2.jpg" alt=""></span></li>
-      <li class="swiper-pagination-bullet"><span><img src="<?php echo get_template_directory_uri(); ?>/img/thumb1.jpg" alt=""></span></li>
+      <?php get_latest_featured_slider_bullet(3); ?>
     </ul>
 
   </div>

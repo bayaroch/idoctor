@@ -130,6 +130,62 @@ echo "</ul></article>";
 wp_reset_query();
 }
 
+function get_latest_featured_slider_post($number) { 
+  $n = $number;
+  $args = array(
+    'posts_per_page' => $n,
+    'post_type'   => 'post',
+    'meta_key'    => 'featured',
+    'meta_value'  => 'Yes'
+  );
+  $the_query = new WP_Query( $args );
+  ?>
+  <?php if( $the_query->have_posts() ): ?>
+    <?php $i=0; while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+    <?php $categories = get_the_category(); $cat_name = $categories[0]->cat_name; ?>
+    <?php $i++; ?>
+    <div class="swiper-slide">
+        <a href="<?php the_permalink(); ?>">
+          <div class="slide-image">
+            <picture>
+              <?php the_post_thumbnail('big'); // Declare pixel size you need inside the array ?>
+            </picture>
+          </div>
+          <div class="slide-content">
+            <div class="slide-content-sleeve">
+              <p class="story-number">
+                <span><?php echo $i; ?></span>
+                <span class="c3"><?php echo $cat_name; ?></span>
+              </p>
+              <h2><?php the_title(); ?></h2>
+              <p><?php echo get_the_popular_excerpt(150); ?></p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <?php endwhile; ?>
+  <?php endif; ?>
+  <?php wp_reset_query(); 
+}
+
+function get_latest_featured_slider_bullet($number) {
+   $n = $number;
+  $args = array(
+    'posts_per_page' => $n,
+    'post_type'   => 'post',
+    'meta_key'    => 'featured',
+    'meta_value'  => 'Yes'
+  );
+  $the_query = new WP_Query( $args );
+  ?>
+  <?php if( $the_query->have_posts() ): ?>
+    <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+    <li class="swiper-pagination-bullet"><span><?php the_post_thumbnail('medium'); // Declare pixel size you need inside the array ?></span></li>
+    <?php endwhile; ?>
+  <?php endif; ?>
+  <?php wp_reset_query(); 
+}
+
 function get_latest_featured_post() {
   $args = array(
     'posts_per_page' => 1,

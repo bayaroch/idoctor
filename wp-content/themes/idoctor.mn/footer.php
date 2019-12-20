@@ -7,10 +7,10 @@
                         <h3 class="follow-us">БИДЭНТЭЙ НЭГДЭЭРЭЙ</h3>
                         <div class="social-center">
                           <ul class="social-footer clearfix">
-                            <li><a href=""><i class="fab fa-youtube"></i></a></li>
-                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a target="_blank href="https://www.youtube.com/tsahimemch"><i class="fab fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="https://www.instagram.com/tsahimemch/"><i class="fab fa-instagram"></i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/TsahimEmchShow/"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="twitter.com/@tsahimemch"><i class="fab fa-twitter"></i></a></li>
 
                           </ul>
                         </div>

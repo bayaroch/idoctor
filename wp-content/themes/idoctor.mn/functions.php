@@ -273,9 +273,22 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('plugins'); // En
 
     }
-    if(is_page() && is_single()) {
-        wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.1'); // Custom scripts
-        wp_enqueue_script('plugins'); // En
+    if(is_single()) {
+         wp_register_style('photoswipecss', get_template_directory_uri() . '/js/photoswiper/photoswipe.css', array(), '1.0', 'all');
+        wp_enqueue_style('photoswipecss'); // Enqueue it!
+
+        wp_register_style('default-skin', get_template_directory_uri() . '/js/photoswiper/default-skin/default-skin.css', array(), '1.0', 'all');
+        wp_enqueue_style('default-skin'); // Enqueue it!
+
+        wp_register_script('photoswipejs', get_template_directory_uri() . '/js/photoswiper/photoswipe.min.js', array(), '1.0.0', true); // Conditional script(s)
+        wp_enqueue_script('photoswipejs'); // Enqueue it!
+
+        wp_register_script('default-js', get_template_directory_uri() . '/js/photoswiper/photoswipe-ui-default.js', array(), '1.0.0' , true); // Conditional script(s)
+        wp_enqueue_script('default-js'); // Enqueue it!
+
+         wp_register_script('single-scripts', get_template_directory_uri() . '/js/single.js', array(), '1.0.0' , true); // Conditional script(s)
+        wp_enqueue_script('single-scripts'); // Enqueue it!
+       
     }
 }
 
@@ -630,6 +643,7 @@ function create_post_type_video()
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
+        'query_var' => false,
         'rewrite' => array( 'slug' => 'video' ),
     ));
 }

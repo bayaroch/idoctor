@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" class="main">
 		<!-- section -->
-		<section>
+		<section class="page">
+		  <div class="container">
 
 			<h1><?php the_title(); ?></h1>
 
@@ -13,11 +14,6 @@
 
 				<?php the_content(); ?>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
-
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
 
 			</article>
 			<!-- /article -->
@@ -35,11 +31,10 @@
 			<!-- /article -->
 
 		<?php endif; ?>
+		  </div>s
 
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

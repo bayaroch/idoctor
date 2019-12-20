@@ -1,40 +1,42 @@
 <?php get_header(); ?>
 
-	<main role="main" class="main">
-		<!-- section -->
-		<section class="page">
-		  <div class="container">
+<main role="main" class="main">
+	<!-- section -->
+	<section class="page">
+		<div class="container">
+			<div class="content">
 
-			<h1><?php the_title(); ?></h1>
+				<h1><span><?php the_title(); ?></span></h1>
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<!-- article -->
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<?php the_content(); ?>
+						<?php the_content(); ?>
 
 
-			</article>
-			<!-- /article -->
+					</article>
+					<!-- /article -->
 
-		<?php endwhile; ?>
+				<?php endwhile; ?>
 
-		<?php else: ?>
+				<?php else: ?>
 
-			<!-- article -->
-			<article>
+					<!-- article -->
+					<article>
 
-				<h2><?php _e( 'Уучлаарай. Контент одоогоор алга байна.', 'html5blank' ); ?></h2>
+						<h2><?php _e( 'Уучлаарай. Контент одоогоор алга байна.', 'html5blank' ); ?></h2>
 
-			</article>
-			<!-- /article -->
+					</article>
+					<!-- /article -->
 
-		<?php endif; ?>
-		  </div>s
+				<?php endif; ?>
+			</div>
+		</div>
 
-		</section>
-		<!-- /section -->
-	</main>
+	</section>
+	<!-- /section -->
+</main>
 
 <?php get_footer(); ?>

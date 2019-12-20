@@ -113,7 +113,7 @@ get_header(); ?>
    <section class="video-section section">
     <div class="video-section_header">
       <h2>ЦАХИМ ЭМЧ ШОУ</h2>
-      <p>ӨДӨР БҮР TV 5 ТЕЛЕВИЗЭЭР 18 ЦАГААС</p>
+      <p>НЯМ ГАРАГ БҮР TV 5 ТЕЛЕВИЗЭЭР 18 ЦАГААС</p>
     </div>
     <div class="video-section_content">
       <div class="container">

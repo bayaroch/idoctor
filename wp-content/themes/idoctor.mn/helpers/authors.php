@@ -37,7 +37,7 @@ function get_author_list() {
      foreach($authors as $author) {
 
           $display_name = $author['data']->display_name;
-          $avatar = get_field('avatar_image', 'user_'. $author['ID']);
+          $avatar = get_field('avatar', 'user_'. $author['ID']);
           $author_profile_url = get_author_posts_url($author['ID']);
           $author_id = $author['ID'];
 

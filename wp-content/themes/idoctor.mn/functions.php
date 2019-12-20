@@ -74,19 +74,18 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 function add_fb_open_graph_tags() {
     if (is_single()) {
         global $post;
-        $images = ; 
+        $images = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
         $description = og_excerpt( $post->post_content, $post->post_excerpt );
         $description = strip_tags($description);
         $description = str_replace("\"", "'", $description); 
 ?>
 <meta property="og:title" content="<?php the_title(); ?>" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="<?php echo $images[0]['sizes']['product-thumb']; ?>" />
-<meta property="og:image:width" content="320" />
-<meta property="og:image:height" content="320" />
+<meta property="og:image" content="<?php echo $images[0]; ?>" />
+<meta property="og:image:width" content="1200" />
 <meta property="og:url" content="<?php the_permalink(); ?>" />
 <meta property="og:description" content="<?php echo $description; ?>" />
-<meta property="og:site_name" content="Hobbyzone.mn" />
+<meta property="og:site_name" content="idoctor.mn" />
 
 <?php   }
  else{
@@ -97,7 +96,7 @@ function add_fb_open_graph_tags() {
    <meta property="og:image" content="<?php echo $imagepage; ?>" />
    <meta property="og:description" content="Тавтай морил" />
    <meta property="og:url" content="<?php the_permalink(); ?>" />
-    <meta property="og:site_name" content="hobbyzone.mn" />
+    <meta property="og:site_name" content="idoctor.mn" />
  <?php }  
 }
 add_action('wp_head', 'add_fb_open_graph_tags');

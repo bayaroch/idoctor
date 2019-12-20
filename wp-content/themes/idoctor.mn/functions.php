@@ -592,7 +592,7 @@ function _post_type_permalink( $post_link, $id = 0, $leavename ) {
     $post = get_post( $id );
     if ( is_wp_error( $post ) )
         return $post;
-        $newlink = $wp_rewrite->get_extra_permastruct( 'video' );
+        $newlink = $wp_rewrite->get_extra_permastruct( 'videos' );
  
         // Replace %cpt_id% in permalink structure with actual post ID
         $newlink = str_replace( '%cpt_id%', $post->ID, $newlink );

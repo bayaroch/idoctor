@@ -5,7 +5,7 @@ function get_author_list() {
      $display_admins = false;
  /*    $order_by = 'post_count'; // 'nicename', 'email', 'url', 'registered', 'display_name', or 'post_count'*/
      $order = 'DESC';
-     $role = 'author';// 'subscriber', 'contributor', 'editor', 'author' - leave blank for 'all'
+     $role = '';// 'subscriber', 'contributor', 'editor', 'author' - leave blank for 'all'
      $hide_empty = false; // hides authors with zero posts
 		
      if(!empty($display_admins)) {

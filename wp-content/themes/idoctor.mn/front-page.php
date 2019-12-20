@@ -201,8 +201,5 @@ get_header(); ?>
 
 </section>
 
-<section class="section section-podcast">
-  <div class="container">asdasdds</div>
-</section>
 
 <?php get_footer(); ?>

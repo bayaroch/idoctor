@@ -5,7 +5,7 @@ function get_author_list() {
      $display_admins = false;
  /*    $order_by = 'post_count'; // 'nicename', 'email', 'url', 'registered', 'display_name', or 'post_count'*/
      $order = 'DESC';
-     $role = 'author'; // 'subscriber', 'contributor', 'editor', 'author' - leave blank for 'all'
+     $role = 'author';// 'subscriber', 'contributor', 'editor', 'author' - leave blank for 'all'
      $hide_empty = false; // hides authors with zero posts
 		
      if(!empty($display_admins)) {
@@ -49,9 +49,8 @@ function get_author_list() {
                                     <img src="<?php echo $avatar; ?>" alt="<?php echo $display_name; ?>" />
                                     <div class="author-name"><h4><?php echo $display_name; ?></h4></div>
                                   </div>
-                                </a>
+              </a>
            </div>
-
           <?php
           }
  

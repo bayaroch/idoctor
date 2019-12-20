@@ -583,7 +583,7 @@ function _post_type_rewrite() {
     $wp_rewrite->add_rewrite_tag( '%cpt_id%', '([^/]+)', $queryarg );
  
     // Add the permalink structure
-    $wp_rewrite->add_permastruct( 'video', '/videos/%cpt_id%/', false );
+    $wp_rewrite->add_permastruct( 'video', '/videos/%cpt_id%/', true );
 }
 add_action( 'init', '_post_type_rewrite' );
 

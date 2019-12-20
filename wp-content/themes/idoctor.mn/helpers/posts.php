@@ -23,6 +23,30 @@ function setPostViews($postID) {
   }
 }
 
+function latest_news(){
+
+  $latest_query=new WP_Query(array(
+    'posts_per_page' => 6, 
+    'post_type' => 'post',
+    'post_status' => 'publish',
+  ));
+  ?>
+  <?php  if ($latest_query->have_posts()) : while ($latest_query->have_posts()) : $latest_query->the_post(); ?>
+   <?php $categories = get_the_category(); $cat_name = $categories[0]->cat_name; ?>
+   <li>
+    <article class="clearfix">
+      <a href="<?php the_permalink(); ?>">
+        <div class="image">
+          <?php the_post_thumbnail('small'); // Declare pixel size you need inside the array ?></div><div class="text"><p class="short-title"><?php echo $cat_name; ?></p><h4><?php the_title(); ?></h4></div>
+        </a>
+      </article>
+    </li>
+    <?php
+  endwhile; endif;
+  wp_reset_query();
+
+}
+
 function popular_news(){
   //popular posts in tabs front-page
   function filter_where($where = '') {
@@ -32,7 +56,7 @@ function popular_news(){
   add_filter('posts_where', 'filter_where');
 
   $popular_query=new WP_Query(array(
-    'showposts'=>6,
+    'posts_per_page' => 6, 
     'meta_key'=>'post_views_count',
     'orderby'=>'meta_value_num',
     'order'=>'DESC'

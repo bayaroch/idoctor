@@ -99,19 +99,7 @@ get_header(); ?>
           <div class="tab_container">
             <div id="tab1" class="tab_content">
               <ul class="news-list clearfix">
-                <?php if (have_posts()): $i=1; while (have_posts() && $i < 6) : the_post(); ?>
-                 <?php $categories = get_the_category(); $cat_name = $categories[0]->cat_name; ?>
-                 <li>
-                  <article class="clearfix">
-                    <a href="<?php the_permalink(); ?>">
-                      <div class="image">
-                        <?php the_post_thumbnail('small'); // Declare pixel size you need inside the array ?></div><div class="text"><p class="short-title"><?php echo $cat_name; ?></p><h4><?php the_title(); ?></h4></div>
-                      </a>
-                    </article>
-                  </li>
-                  <?php $i++; endwhile; ?>
-                  <?php else: ?>
-                  <?php endif; ?>
+               <?php latest_news(); ?>
                 </ul>
               </div>
                <div id="tab2" class="tab_content">
@@ -201,5 +189,5 @@ get_header(); ?>
 
 </section>
 
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

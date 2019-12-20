@@ -1,5 +1,11 @@
+
+
 var $ = jQuery.noConflict();
 $(function() {
+
+
+
+  
 	$(".toggle-button").click(function() {
 
 		// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
@@ -144,6 +150,9 @@ $(function() {
 
 $('.post-image').imagesLoaded( function() {
   $('.image-wrapper').addClass('loaded');
+
+
+
 
 });
 

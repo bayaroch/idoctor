@@ -1246,6 +1246,7 @@ footer.footer{
     background:#3cb49a;
     padding:0;
     position: relative;
+    padding-top:40px;
 }
 .footer-bottom{
     padding-top:60px;

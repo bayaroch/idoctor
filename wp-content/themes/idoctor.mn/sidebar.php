@@ -1,15 +1,22 @@
-<!-- sidebar -->
-<aside class="sidebar" role="complementary">
+  <section class="section-author">
+    <div class="container">
+      <div class="author-list">
+        <div class="author-holder">
+         <div class="swiper-container" id="swiper-author">
+          <div class="swiper-wrapper">
+            <?php get_author_list(); ?>
+          </div>
+          <!-- Add Arrows -->
+        </div>
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
 
-	<?php get_template_part('searchform'); ?>
+      <div class="author-bio">
+        <?php get_author_bio();?>
+        <div class="author-content_text text-default active">Та бүхэнд Мэдээний нүүр хуудаст нийтлэгдэж буй бүх төрлийн контент дахь нийтлэлийн болоод үйл ажиллагааны бодлогоо танилцуулж байна.</div>
+      </div>
 
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-	</div>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
-	</div>
-
-</aside>
-<!-- /sidebar -->
+    </div>
+  </div>
+</section>

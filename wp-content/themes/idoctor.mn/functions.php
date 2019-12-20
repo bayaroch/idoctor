@@ -71,27 +71,61 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 
 //Lets add Open Graph Meta Info
 
-function insert_fb_in_head() {
-    global $post;
-    if ( !is_singular()) //if it is not a post or a page
-        return;
-        echo '<meta property="fb:admins" content="idoctor.mn"/>';
-        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
-        echo '<meta property="og:type" content="article"/>';
-        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-        echo '<meta property="og:site_name" content="idoctor.mn"/>';
-    if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
-        $default_image=''. get_template_directory_uri() .'/img/backgrounds/category.jpg'; //replace this with a default image on your server or an image in your media library
-        echo '<meta property="og:image" content="' . $default_image . '"/>';
-    }
-    else{
-        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
-    }
-    echo "
-";
+function add_fb_open_graph_tags() {
+    if (is_single()) {
+        global $post;
+        $images = ; 
+        $description = og_excerpt( $post->post_content, $post->post_excerpt );
+        $description = strip_tags($description);
+        $description = str_replace("\"", "'", $description); 
+?>
+<meta property="og:title" content="<?php the_title(); ?>" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<?php echo $images[0]['sizes']['product-thumb']; ?>" />
+<meta property="og:image:width" content="320" />
+<meta property="og:image:height" content="320" />
+<meta property="og:url" content="<?php the_permalink(); ?>" />
+<meta property="og:description" content="<?php echo $description; ?>" />
+<meta property="og:site_name" content="Hobbyzone.mn" />
+
+<?php   }
+ else{
+    $imagepage = ''. get_template_directory_uri() .'/img/backgrounds/default.png'; 
+    ?>
+   <meta property="og:title" content="<?php the_title(); ?>" />
+   <meta property="og:type" content="article" />
+   <meta property="og:image" content="<?php echo $imagepage; ?>" />
+   <meta property="og:description" content="Тавтай морил" />
+   <meta property="og:url" content="<?php the_permalink(); ?>" />
+    <meta property="og:site_name" content="hobbyzone.mn" />
+ <?php }  
 }
-add_action( 'wp_head', 'insert_fb_in_head', 5 );
+add_action('wp_head', 'add_fb_open_graph_tags');
+
+function og_excerpt($text, $excerpt){
+    
+    if ($excerpt) return $excerpt;
+
+    $text = strip_shortcodes( $text );
+
+    $text = apply_filters('the_content', $text);
+    $text = str_replace(']]>', ']]>', $text);
+    $text = strip_tags($text);
+    $excerpt_length = apply_filters('excerpt_length', 100);
+    $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+    $words = preg_split("/[\n
+     ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+    if ( count($words) > $excerpt_length ) {
+            array_pop($words);
+            $text = implode(' ', $words);
+            $text = $text . $excerpt_more;
+    } else {
+            $text = implode(' ', $words);
+    }
+
+    return apply_filters('wp_trim_excerpt', $text, $excerpt);
+}
+
 
 
 
@@ -222,11 +256,13 @@ function html5blank_header_scripts()
         wp_register_script('parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('parallax'); // Enqueue it!
 
-       wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('plugins'); // Enqueue it!
 
         wp_register_script('mainscripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('mainscripts'); // Enqueue it!
+
+
     }
 }
 

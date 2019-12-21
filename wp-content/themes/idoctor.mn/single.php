@@ -38,16 +38,14 @@
 			</div>
 		</div>
 		<div class="post-container">
-			<div class="columns">
+			<div class="columns reverse-columns">
 				<div class="column is-three-quarters content-column">
 					<div class="content">
 
 					<!-- article -->
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 						<?php the_content(); // Dynamic Content ?>
-
-						<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+						<?php the_tags( __( 'Тагууд: ', 'html5blank' ), ', ', ''); // Separated by commas with a line break at the end ?>
                         <?php setPostViews(get_the_ID()); ?>
 					</article>
 					<!-- /article -->
@@ -83,7 +81,7 @@
 						<?php } ?>
 					<div class="total_views_count"><i class="fas fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></div>
 					<div class="post_date_info"><i class="far fa-clock"></i><?php the_time('Y.m.d'); ?></div>
-					<div class="post-tag_info"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>' ); // Separated by commas with a line break at the end. ?></div>
+					<div class="post-tag_info"><?php the_tags( __( 'Тагууд: ', 'html5blank' ), ', ', '' ); // Separated by commas with a line break at the end. ?></div>
 				</div>
 				<div class="post-info">
 					<p>Нийтлэсэн:</p>

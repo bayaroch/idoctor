@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="post-container">
-			<div class="columns">
+			<div class="columns reverse-columns">
 				<div class="column is-three-quarters content-column">
 					<div class="content">
 

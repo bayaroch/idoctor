@@ -307,7 +307,7 @@ function html5blank_styles()
     wp_register_style('wpdefault', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('wpdefault'); // Enqueue it!
 
-    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.9', 'all');
+    wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '2.0', 'all');
     wp_enqueue_style('main'); // Enqueue it!
 }
 

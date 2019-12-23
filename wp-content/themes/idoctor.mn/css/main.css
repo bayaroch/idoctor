@@ -1771,6 +1771,25 @@ ul.also-read li h3 {
 ul.also-read li a.aligner{
     height:36px;
 }
+.pswp__caption__center {text-align: center;}
+#gallery figure {
+  display: inline-block;
+  margin:0;
+  padding-top:0;
+  position: relative;
+}
+#gallery figure span.number-pic{
+    position: absolute;
+    right:20px;
+    bottom:20px;
+    color:#fff;
+    font-weight:600;
+    opacity: 0.8;
+    font-size:24px;
+}
+
+img {width: 100%;}
+.spacer {height: 5em;}
 @media screen and (max-width:1200px) {
     nav.main-menu {
         display: none;

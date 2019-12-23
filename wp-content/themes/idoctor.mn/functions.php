@@ -255,8 +255,6 @@ function html5blank_header_scripts()
         wp_register_script('parallax', get_template_directory_uri() . '/js/parallax.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('parallax'); // Enqueue it!
 
-        wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.1'); // Custom scripts
-        wp_enqueue_script('plugins'); // Enqueue it!
 
         wp_register_script('mainscripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.2'); // Custom scripts
         wp_enqueue_script('mainscripts'); // Enqueue it!
@@ -286,7 +284,7 @@ function html5blank_conditional_scripts()
         wp_register_script('default-js', get_template_directory_uri() . '/js/photoswiper/photoswipe-ui-default.js', array(), '1.0.0' , true); // Conditional script(s)
         wp_enqueue_script('default-js'); // Enqueue it!
 
-         wp_register_script('single-scripts', get_template_directory_uri() . '/js/single.js', array(), '1.0.0' , true); // Conditional script(s)
+         wp_register_script('single-scripts', get_template_directory_uri() . '/js/single.js', array(), '1.0.1' , true); // Conditional script(s)
         wp_enqueue_script('single-scripts'); // Enqueue it!
        
     }

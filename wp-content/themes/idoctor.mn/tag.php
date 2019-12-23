@@ -20,7 +20,7 @@
                 <div class="post-container">
                     <div class="headline-block">
                         
-                        <div class="category-link"><a style="background-color:#0f385a;" class="" href="<?php echo $category_link ?>">ТАГ</a></div>
+                        <div class="category-link"><a style="background-color:#0f385a;" class="" href="<?php echo $category_link ?>">Агуулга</a></div>
                         <h1><?php echo single_tag_title('', false); ?></h1>
                         <p class="cat-desc"><?php echo $term->description; ?></p>
                     </div>

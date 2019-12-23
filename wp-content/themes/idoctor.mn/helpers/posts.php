@@ -404,3 +404,36 @@ add_filter( 'human_time_diff', function($since, $diff, $from, $to) {
     return strtr($since, $replace);
 
 }, 10, 4 );
+
+
+
+function get_story_image () {
+   if( have_rows('photo_story') ): ?>
+                        <?php $i=0; ?>
+                        <h4 style="padding-bottom:10px">Фото түүх</h4>
+                        <div id="gallery" class="gallery is-1 is-variable columns is-multiline" itemscope itemtype="http://schema.org/ImageGallery">
+                          <?php while( have_rows('photo_story') ): the_row();   
+                                $i++;
+                            //vars
+                                $image = get_sub_field('story_image');
+                                $content = get_sub_field('story_text');
+                                $size = 'thumbnail';
+                                $fullsize = 'big';
+                                $thumbnail = $image['sizes'][ $size ];
+                                $bigimage = $image['sizes'][ $fullsize ];
+                                $width = $image['sizes'][ $fullsize . '-width' ];
+                                $height = $image['sizes'][ $fullsize . '-height' ];
+                            ?>
+                    <!-- Use figure for a more semantic html -->
+                    <figure class="column is-one-third" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                      <span class="number-pic"><?php echo $i; ?></span>
+                      <!-- Link to the big image, not mandatory, but usefull when there is no JS -->
+                      <a href="<?php echo esc_url($bigimage); ?>" data-caption="<?php echo $content; ?>" data-width="<?php echo $width; ?>" data-height="<?php echo $height; ?>" itemprop="contentUrl">
+                        <!-- Thumbnail -->
+                        <img src="<?php echo esc_url($thumbnail); ?>" itemprop="thumbnail" alt="Image description">
+                      </a>
+                    </figure>
+                    <?php endwhile; ?>
+                    </div>
+            <?php endif; 
+}

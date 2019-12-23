@@ -113,8 +113,10 @@ function get_latest_posts_by_type($tax, $slug , $count) {
    <div class="text">
     <a href="<?php echo $link; ?>" class="cat-tag p-color"><?php echo $name; ?></a>
     <a href="<?php the_permalink(); ?>">
-      <h3><?php the_title(); ?></h3>
-      <p><?php echo get_the_popular_excerpt(220); ?></p></a>
+      <h3 class="truncate-two"><?php the_title(); ?></h3>
+      </a>
+      <?php echo '<span class="human-time"><i class="far fa-clock"></i>'. mongolian_time_diff( get_the_time('U'), current_time('timestamp') ) . ' өмнө</span>'; ?>
+      <p><?php echo get_the_popular_excerpt(220); ?></p>
     </div>
     <?php
     $i++;
@@ -122,7 +124,8 @@ function get_latest_posts_by_type($tax, $slug , $count) {
   }
   else{
     ?>
-    <li><a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a></li>
+    <li><a href="<?php the_permalink(); ?>"><h3 class="truncate-two"><?php the_title(); ?></h3></a>
+    </li>
     <?php
   }
 endwhile;
@@ -169,7 +172,7 @@ function get_latest_featured_slider_post($number) {
 }
 
 function get_latest_featured_slider_bullet($number) {
-   $n = $number;
+  $n = $number;
   $args = array(
     'posts_per_page' => $n,
     'post_type'   => 'post',
@@ -180,7 +183,8 @@ function get_latest_featured_slider_bullet($number) {
   ?>
   <?php if( $the_query->have_posts() ): ?>
     <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-    <li class="swiper-pagination-bullet"><span><?php the_post_thumbnail('medium'); // Declare pixel size you need inside the array ?></span></li>
+    <li class="swiper-pagination-bullet"><span><?php the_post_thumbnail('medium'); // Declare pixel size you need inside the array ?></span>
+    </li>
     <?php endwhile; ?>
   <?php endif; ?>
   <?php wp_reset_query(); 
@@ -206,8 +210,9 @@ function get_latest_featured_post() {
         <div class="text">
           <a href="" class="cat-tag p-color">ОНЦЛОХ</a>
           <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3>
-            <p><?php echo get_the_popular_excerpt(250); ?></p>
           </a>
+          <?php echo '<span class="human-time"><i class="far fa-clock"></i>'. mongolian_time_diff( get_the_time('U'), current_time('timestamp') ) . ' өмнө</span>'; ?>
+          <p><?php echo get_the_popular_excerpt(250); ?></p>
         </div>
       </article>
     <?php endwhile; ?>
@@ -249,8 +254,10 @@ function get_latest_post_by_type_single($tax, $slug , $count) {
               <div class="text">
                 <a href="<?php echo $link; ?>" class="cat-tag p-color"><?php echo $name; ?></a>
                 <a href="<?php the_permalink(); ?>">
-                  <h3><?php the_title(); ?></h3>
-                  <p><?php echo get_the_popular_excerpt(220); ?></p></a>
+                  <h3 class="truncate-two"><?php the_title(); ?></h3>
+                </a>
+                  <?php echo '<span class="human-time"><i class="far fa-clock"></i>'. mongolian_time_diff( get_the_time('U'), current_time('timestamp') ) . ' өмнө</span>'; ?>
+                  <p><?php echo get_the_popular_excerpt(220); ?></p>
                 </div>
      </article>
     <?php
@@ -314,3 +321,86 @@ function get_the_popular_excerpt($length){
 
   return $excerpt;
 }
+
+
+
+/**
+ * Determines the difference between two timestamps.
+ *
+ * The difference is returned in a human readable format such as "1 hour",
+ * "5 mins", "2 days".
+ *
+ * @since 1.5.0
+ *
+ * @param int $from Unix timestamp from which the difference begins.
+ * @param int $to Optional. Unix timestamp to end the time difference. Default becomes time() if not set.
+ * @param int $limit Optional. The number of unit types to display (i.e. the accuracy). Defaults to 1. 
+ * @return string Human readable time difference.
+ */
+function mongolian_time_diff( $from, $to = '', $limit = 1 ) {
+    // Since all months/years aren't the same, these values are what Google's calculator says
+    $units = apply_filters( 'time_units', array(
+            31556926 => array( __('%s жилийн'),  __('%s жилийн') ),
+            2629744  => array( __('%s сарын'), __('%s сарын') ),
+            86400    => array( __('%s өдрийн'),   __('%s өдрийн') ),
+            3600     => array( __('%s цагийн'),  __('%s цагийн') ),
+            60       => array( __('%s минутын'),   __('%s минутын') ),
+    ) );
+
+    if ( empty($to) )
+        $to = time();
+
+    $from = (int) $from;
+    $to   = (int) $to;
+    $diff = (int) abs( $to - $from );
+
+    $items = 0;
+    $output = array();
+
+    foreach ( $units as $unitsec => $unitnames ) {
+            if ( $items >= $limit )
+                    break;
+
+            if ( $diff < $unitsec )
+                    continue;
+
+            $numthisunits = floor( $diff / $unitsec );
+            $diff = $diff - ( $numthisunits * $unitsec );
+            $items++;
+
+            if ( $numthisunits > 0 )
+                    $output[] = sprintf( _n( $unitnames[0], $unitnames[1], $numthisunits ), $numthisunits );
+    }
+
+
+    // translators: The seperator for human_time_diff() which seperates the years, months, etc.
+    $seperator = _x( ', ', 'human_time_diff' );
+
+    if ( !empty($output) ) {
+            return implode( $seperator, $output );
+    } else {
+            $smallest = array_pop( $units );
+            return sprintf( $smallest[0], 1 );
+    }
+}
+
+add_filter( 'human_time_diff', function($since, $diff, $from, $to) {
+
+    $replace = array(
+        'year'  => 'жилийн',
+        'years' => 'жилийн',
+        'month'  => 'сарын',
+        'months' => 'сарын',
+        'week'  => 'долоо хоногын',
+        'weeks' => 'долоо хоногын',
+        'hour'  => 'цагийн',
+        'hours' => 'цагийн',
+        'day'   => 'өдрийн',
+        'days'  => 'өдрийн',
+        'min'   => 'минутын',
+        'mins'  => 'минутын',
+    );
+
+    return strtr($since, $replace);
+
+}, 10, 4 );

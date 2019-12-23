@@ -80,8 +80,6 @@ get_header(); ?>
 
       </div>
     </section>
-
-
     <section class="story-type section">
       <div class="container">
         <div class="featured-news">
@@ -101,12 +99,7 @@ get_header(); ?>
              </div>
            </div>
          </div>
-
-
-
        </div>
-
-
      </div>
    </section>
 

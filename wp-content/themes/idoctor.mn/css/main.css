@@ -1771,7 +1771,7 @@ main.main{
   justify-content: center;
    }
    .aligner {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }

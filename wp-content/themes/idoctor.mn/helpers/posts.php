@@ -112,7 +112,7 @@ function get_latest_posts_by_type($tax, $slug , $count) {
    </div>
    <div class="text">
     <a href="<?php echo $link; ?>" class="cat-tag p-color"><?php echo $name; ?></a>
-    <a class="truncate-h" href="<?php the_permalink(); ?>">
+    <a class="truncate-h aligner" href="<?php the_permalink(); ?>">
       <h3 class="truncate-two"><?php the_title(); ?></h3>
       </a>
       <?php echo '<span class="human-time"><i class="far fa-clock"></i>'. mongolian_time_diff( get_the_time('U'), current_time('timestamp') ) . ' өмнө</span>'; ?>

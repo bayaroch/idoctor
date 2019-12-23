@@ -38,14 +38,6 @@ $(function() {
     
   });
 
-  $(window).on('resize', function(){
-   $all_oembed_videos.each(function() {
-    
-    $(this).removeAttr('height').removeAttr('width').wrap( "<div class='embed-container'></div>" );
-    
-  });
- });
-
   var homeswiper = new Swiper('#swiper-home', {
    loop:true,
    allowTouchMove:false,

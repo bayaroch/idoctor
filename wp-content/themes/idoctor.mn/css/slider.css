@@ -276,7 +276,7 @@
 
 @media screen and (min-width:360px) {
     .home-slider .swiper-slide .slide-content h2 {
-        font-size: 40px;
+        font-size: 20px;
         line-height: 38px
     }
     .home-slider .swiper-slide.swiper-slide-video .slide-content .story-number {
@@ -344,8 +344,7 @@
 
     }
     .home-slider{
-        min-height: 450px;
-        max-height:calc(100vh - 100px);
+        height: 300px !important;
     }  
 }
 
@@ -353,6 +352,9 @@
     .home-slider .swiper-slide .slide-content .story-number span+span {
         background: 0 0
     }
+    .home-slider{
+        height: 300px !important;
+    }  
 }
 
 @media screen and (min-width:1024px) {

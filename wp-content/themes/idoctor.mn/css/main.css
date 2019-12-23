@@ -1833,8 +1833,18 @@ main.main{
         padding-right:.75rem;
     }
     .content{
-        text-align: center;
+        text-align: justify;
+
     }
+}
+@media(max-width: 767px) { /* <== You can change this break point as per your  needs */
+  .reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  .post-container{
+    padding-top:0;
+  }
 }
 /*
  * Hide visually and from screen readers

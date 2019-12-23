@@ -966,9 +966,9 @@ ul.also-read li{
 }
 .video-section .video-section_header {
    position: relative;
-   padding:30px 0;
+   padding:20px 0 20px 0;
    text-align: center;
-   background:url(../img/bg.jpg) no-repeat top right #42b399;
+   background:url(../img/bgshow.png) center right no-repeat #004682;
 }
 .video-section .video-section_header:before{
     position: absolute;
@@ -1814,6 +1814,15 @@ ul.also-read li a.aligner{
     font-weight:700;
     margin-left:10px;
     font-size:1.4rem;
+}
+.video-section .video-section_header h2.videoshowtitle{
+    display: block;
+    height:100px;
+    width:200px;
+    margin:0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 @media screen and (max-width:1200px) {
     nav.main-menu {

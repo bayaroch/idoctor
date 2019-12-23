@@ -105,8 +105,8 @@ get_header(); ?>
 
    <section class="video-section section">
     <div class="video-section_header">
-      <h2>ЦАХИМ ЭМЧ ШОУ</h2>
-      <p>НЯМ ГАРАГ БҮР TV 5 ТЕЛЕВИЗЭЭР 18 ЦАГААС</p>
+      <h2 class="videoshowtitle" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/show.jpg');"></h2>
+      <p>Эрүүлжье, Залуужъя, Урт насалъя</p>
     </div>
     <div class="video-section_content">
       <div class="container">

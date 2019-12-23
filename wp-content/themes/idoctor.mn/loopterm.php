@@ -20,7 +20,7 @@
 						<a href="<?php echo $catlink; ?>" class="cat-tag p-color c-color" data-evcat="Home Page" data-evact="DailyDose" data-evlabel="Flashback">
                            <?php echo $catname; ?>
 						</a>
-						<a class="truncate-h" href="<?php the_permalink(); ?>">
+						<a class="truncate-h aligner" href="<?php the_permalink(); ?>">
 							<h3 class="truncate-two"><?php the_title(); ?></h3>
 						</a>
 						<?php echo '<span class="human-time"><i class="far fa-clock"></i>'. mongolian_time_diff( get_the_time('U'), current_time('timestamp') ) . ' өмнө</span>'; ?>

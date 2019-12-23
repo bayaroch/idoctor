@@ -124,7 +124,7 @@ function get_latest_posts_by_type($tax, $slug , $count) {
   }
   else{
     ?>
-    <li><a class="truncate-h" href="<?php the_permalink(); ?>"><h3 class="truncate-two"><?php the_title(); ?></h3></a>
+    <li><a class="aligner" href="<?php the_permalink(); ?>"><h3 class="truncate-two"><?php the_title(); ?></h3></a>
     </li>
     <?php
   }

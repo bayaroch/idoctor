@@ -1740,9 +1740,6 @@ main.main{
    }
    .truncate-h {
     height:50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
    }
    .human-time{
     font-size:13px;
@@ -1773,10 +1770,13 @@ main.main{
   align-items: center;
   justify-content: center;
    }
-   .Aligner {
+   .aligner {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+ul.also-read li a.aligner{
+    height:36px;
 }
    @media screen and (max-width:1200px) {
     nav.main-menu {

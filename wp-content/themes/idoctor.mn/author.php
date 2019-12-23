@@ -21,7 +21,7 @@
 					  </figure>
 					  <div class="media-content author-content">
 					      <h2>
-					        Нийтлэгч:<span><?php echo $last_name; ?>.<?php echo $first_name; ?></span></h2>
+					        Нийтлэгч:<span><?php echo $last_name; ?> <?php echo $first_name; ?></span></h2>
 					        <?php echo wpautop( get_the_author_meta('description') ); ?>
 					      </p>
 					  </div>

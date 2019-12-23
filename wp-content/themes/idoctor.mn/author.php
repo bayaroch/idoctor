@@ -1,77 +1,37 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<main class="main" role="main">
 
-		<?php if (have_posts()): the_post(); ?>
+		 <div class="container">
+		 	<?php 
+		 	    $author_id = get_the_author_meta('ID');
+				$user_info = get_userdata($author_id);
+				$first_name = $user_info->first_name;
+                $last_name = $user_info->last_name;
+				$avatar = get_field('avatar', 'user_'. $author_id);
+				$author_profile_url = get_author_posts_url($author_id);
+            ?>
 
-			<h1><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
+		 	    <div class="author-header card">
+					<article class="media">
+					  <figure class="media-left">
+					    <p class="image is-128x128 author-page-img">
+					      <img src="<?php echo $avatar; ?>" alt="<?php echo $display_name; ?>" />
+					    </p>
+					  </figure>
+					  <div class="media-content author-content">
+					      <h2>
+					        Нийтлэгч:<span><?php echo $last_name; ?>.<?php echo $first_name; ?></span></h2>
+					        <?php echo wpautop( get_the_author_meta('description') ); ?>
+					      </p>
+					  </div>
+					</article>
+		 	    </div>
+               <?php get_template_part('loop'); ?>
 
-		<?php if ( get_the_author_meta('description')) : ?>
-
-		<?php echo get_avatar(get_the_author_meta('user_email')); ?>
-
-			<h2><?php _e( 'About ', 'html5blank' ); echo get_the_author() ; ?></h2>
-
-			<?php echo wpautop( get_the_author_meta('description') ); ?>
-
-		<?php endif; ?>
-
-		<?php rewind_posts(); while (have_posts()) : the_post(); ?>
-
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<!-- post thumbnail -->
-				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-					</a>
-				<?php endif; ?>
-				<!-- /post thumbnail -->
-
-				<!-- post title -->
-				<h2>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h2>
-				<!-- /Post title -->
-
-				<!-- post details -->
-				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-				<!-- /post details -->
-
-				<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Контент одоогоор алга байна.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
+              <?php get_template_part('pagination'); ?>
+         </div>
+	
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

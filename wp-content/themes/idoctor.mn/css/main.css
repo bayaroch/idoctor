@@ -1790,7 +1790,31 @@ ul.also-read li a.aligner{
 .pswp__ui--hidden{
     display: none;
 }
-.spacer {height: 5em;}
+.author-header{
+    margin-top:5rem;
+    margin-bottom:20px;
+    padding:1rem;
+}
+.author-page-img{
+    overflow:hidden;
+}
+.author-page-img img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+.author-content h2{
+    font-size:1.2rem;
+    margin-bottom:5px;
+}
+.author-content p {
+    color:#888;
+}
+.author-content h2 span{
+    font-weight:700;
+    margin-left:10px;
+    font-size:1.4rem;
+}
 @media screen and (max-width:1200px) {
     nav.main-menu {
         display: none;

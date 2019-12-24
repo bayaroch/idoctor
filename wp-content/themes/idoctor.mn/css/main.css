@@ -1899,6 +1899,9 @@ ul.also-read li a.aligner{
     }
 }
 @media screen and (max-width: 768px ) {
+    .video-section .video-section_header {
+        background-image:none;
+    }
     h2.section-title {
         font-size:30px;
     }

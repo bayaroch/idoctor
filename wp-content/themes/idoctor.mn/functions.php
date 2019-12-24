@@ -594,7 +594,7 @@ function _post_type_rewrite() {
     $wp_rewrite->add_rewrite_tag( '%cpt_id%', '([^/]+)', $queryarg );
  
     // Add the permalink structure
-    $wp_rewrite->add_permastruct( 'video', '/videos/%cpt_id%/', false );
+    $wp_rewrite->add_permastruct( 'video', '/video/%cpt_id%/', false );
 }
 add_action( 'init', '_post_type_rewrite' );
 
@@ -641,7 +641,6 @@ function create_post_type_video()
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
-        'query_var' => false,
         'rewrite' => array( 'slug' => 'video' ),
     ));
 }

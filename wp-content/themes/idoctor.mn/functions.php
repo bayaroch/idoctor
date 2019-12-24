@@ -89,12 +89,12 @@ function add_fb_open_graph_tags() {
 
 <?php   }
  else{
-    $imagepage = ''. get_template_directory_uri() .'/img/backgrounds/default.png'; 
+    $imagepage = ''. get_template_directory_uri() .'/img/backgrounds/default.jpg'; 
     ?>
    <meta property="og:title" content="<?php the_title(); ?>" />
    <meta property="og:type" content="article" />
    <meta property="og:image" content="<?php echo $imagepage; ?>" />
-   <meta property="og:description" content="Тавтай морил" />
+   <meta property="og:description" content="Жаргалд хөтөлнө" />
    <meta property="og:url" content="<?php the_permalink(); ?>" />
     <meta property="og:site_name" content="idoctor.mn" />
  <?php }  

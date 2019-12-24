@@ -16,6 +16,8 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<div id="fb-root"></div> 
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=462346254661162&autoLogAppEvents=1"></script>
 		<!-- HEADER-->
 		<header class="header-main">
 			<div class="left-side">

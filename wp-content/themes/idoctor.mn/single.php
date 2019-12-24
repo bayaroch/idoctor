@@ -133,6 +133,8 @@
 		endif;
 		wp_reset_postdata(); ?>
 
+		<?php comments_template(); ?>
+
 	</div>
 
 </div>

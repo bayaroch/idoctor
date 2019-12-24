@@ -1833,7 +1833,31 @@ ul.also-read li a.aligner{
     min-height:100% !important;
     height:100%;
 }
-
+.comments {
+    margin-top:40px;
+}
+.comments h2 {
+    position: relative;
+    width:100%;
+    display: block;
+    height:1px;
+    background:#333;
+    margin-bottom:30px;
+}
+.comments h2 > span{
+    position: absolute;
+    left:0;
+    right:0;
+    width:auto;
+    margin:0 auto;
+    padding:0 10px;
+    text-align: center;
+    width:100px;
+    display: inline-block;
+    background:#fff;
+    top:50%;
+    transform: translateY(-50%);
+}
 @media screen and (max-width:1200px) {
     nav.main-menu {
         display: none;

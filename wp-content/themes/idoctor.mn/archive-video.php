@@ -1,21 +1,38 @@
 <?php 
 /* Template Name: Videos */
 get_header(); ?>
-<?php
+
+<main class="main" role="main">
+  <!-- section -->
+  <section class="video-section section">
+    <div class="video-section_header">
+      <h2 class="videoshowtitle" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/show.jpg');"></h2>
+      <p>Эрүүлжье, Залуужъя, Урт насалъя</p>
+    </div>
+    <div class="video-section_content">
+      <div class="container">
+        <div class="columns">
+         <?php get_latest_videos(); ?>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <section class="page">
+    <?php
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
   'posts_per_page' => 42,
+  'offset'      => 4,
   'paged' => $paged,
   'post_type' => 'video',
 );
 $custom_query = new WP_Query( $args );
 ?>
-<main class="main" role="main">
-  <!-- section -->
-  <section class="page">
     <div class="container">
         <div class="content">
-
             <h1><span><?php the_title(); ?></span></h1>
 
             <div class="columns is-multiline story-block">
@@ -30,7 +47,7 @@ $custom_query = new WP_Query( $args );
                           </div>
                           <h4 class="truncate-two"><?php the_title(); ?></h4>
                       </div>
-                      
+
                   </div>
 
               <?php endwhile; ?>
@@ -40,8 +57,8 @@ $custom_query = new WP_Query( $args );
                     html5wp_pagination();
                 } ?>
                 <!-- article -->
-                <article>
-                    <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+                <article style="text-align: center; width:100%; display: block;">
+                    <p ><?php _e( 'Контент энд үргэлжилнэ', 'html5blank' ); ?></p>
                 </article>
                 <!-- /article -->
 

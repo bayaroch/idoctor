@@ -51,6 +51,9 @@
 		<div class="mobile-menu">
 			<div class="inner-mobile">
 				<ul class="m-menu clearfix">
+				<span class="show-mobile-head"><?php header_nav(); ?>
+					<div class="cat-menu">Ангилал</div>
+				</span>
 				<?php side_nav(); ?>
 			    </ul>
 			</div>

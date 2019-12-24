@@ -1858,7 +1858,18 @@ ul.also-read li a.aligner{
     top:50%;
     transform: translateY(-50%);
 }
+.show-mobile-head{
+    display: none;
+}
 @media screen and (max-width:1200px) {
+    .show-mobile-head{
+        display: block;
+    }
+    .show-mobile-head .cat-menu{
+        text-align: center;
+        padding:0.5rem 0;
+        border-bottom:1px solid #000;
+    }
     nav.main-menu {
         display: none;
     }

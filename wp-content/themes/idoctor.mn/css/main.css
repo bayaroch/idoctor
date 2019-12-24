@@ -1872,6 +1872,9 @@ ul.also-read li a.aligner{
     font-weight:500;
 }
 @media screen and (max-width:1200px) {
+    .container{
+        padding:0 0.7rem;
+    }
     .show-mobile-head{
         display: block;
     }

@@ -1,4 +1,5 @@
 <?php 
+/* Template Name: Videos */
 get_header(); ?>
 	<main class="main" role="main">
 		<!-- section -->
@@ -9,7 +10,7 @@ get_header(); ?>
 
 			<h1><?php _e( 'Архив', 'html5blank' ); ?></h1>
 
-			<?php get_template_part('loop'); ?>
+			
 
 			<?php get_template_part('pagination'); ?>
 

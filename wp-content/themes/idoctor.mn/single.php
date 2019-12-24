@@ -26,7 +26,7 @@
 					<div class="author-top_holder"><span class="author-top"><span>Нийтлэгч</span>@<span><?php the_author_posts_link(); ?></span>
 						<span>
 							<?php 
-							$terms = get_terms('type');
+							$terms = get_the_terms( $post->ID, 'type');
 							$term = $terms[0];
 							$termname = $term->name;
 							$termlink = get_term_link($term->slug, 'type');

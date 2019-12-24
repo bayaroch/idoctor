@@ -1861,6 +1861,16 @@ ul.also-read li a.aligner{
 .show-mobile-head{
     display: none;
 }
+.small-video-block .small-video_news{
+    margin-bottom:10px;
+}
+.small-video-block h4 {
+    font-size:16px;
+}
+.small-video-block .small-video_news h2 {
+    margin-top:-10px;
+    font-weight:500;
+}
 @media screen and (max-width:1200px) {
     .show-mobile-head{
         display: block;

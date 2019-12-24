@@ -1829,6 +1829,11 @@ ul.also-read li a.aligner{
     background-repeat: no-repeat;
     background-position: center center;
 }
+.text.text-related {
+    min-height:100% !important;
+    height:100%;
+}
+
 @media screen and (max-width:1200px) {
     nav.main-menu {
         display: none;

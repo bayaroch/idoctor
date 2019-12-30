@@ -1923,6 +1923,9 @@ ul.also-read li a.aligner{
     }
 }
 @media screen and (max-width: 768px ) {
+    .headline-block h1 {
+        font-size:28px;
+    }
     .video-section .video-section_header {
         background-image:none;
     }

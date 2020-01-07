@@ -333,7 +333,7 @@
 
 @media screen and (max-width: 767px) {
     .home-slider .swiper-slide .slide-content .slide-content-sleeve {
-        top: 140px;
+        top: 70px;
         padding: 0 24px 0 56px
     }
     .home-slider .home-slider-navigation {
@@ -345,7 +345,6 @@
     }
     .home-slider{
         height: 300px !important;
-        min-height:300px !important;
     }  
 }
 

@@ -11,9 +11,7 @@
         margin:  auto 0;
         min-height: 440px
     }
-.home-slider .swiper-slide .slide-image picture{
-    height:440px;
-}
+
     .home-slider .skip-slider {
         position: absolute;
         right: 20px;
@@ -338,6 +336,9 @@
     .home-slider .swiper-slide .slide-content .slide-content-sleeve {
         top: 70px;
         padding: 0 24px 0 56px
+    }
+    .home-slider .swiper-slide .slide-image picture{
+        height:440px;
     }
     .home-slider .home-slider-navigation {
         padding-left: 56px;

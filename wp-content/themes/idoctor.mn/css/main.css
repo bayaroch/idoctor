@@ -1955,6 +1955,9 @@ ul.also-read li a.aligner{
 .post-container{
     padding-top:0;
 }
+.post-image {
+    height:400px;
+}
 }
 /*
  * Hide visually and from screen readers

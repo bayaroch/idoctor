@@ -209,7 +209,7 @@ function get_latest_featured_post() {
         </div>
         <div class="text">
           <a href="" class="cat-tag p-color">ОНЦЛОХ</a>
-          <a href="f"><h3><?php the_title(); ?></h3>
+          <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3>
           </a>
           <?php echo '<span class="human-time"><i class="far fa-clock"></i>'. mongolian_time_diff( get_the_time('U'), current_time('timestamp') ) . ' өмнө</span>'; ?>
           <p><?php echo get_the_popular_excerpt(250); ?></p>

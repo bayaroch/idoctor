@@ -345,6 +345,7 @@
     }
     .home-slider{
         height: 300px !important;
+        min-height:300px !important;
     }  
 }
 

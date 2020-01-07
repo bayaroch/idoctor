@@ -183,7 +183,7 @@ function get_latest_featured_slider_bullet($number) {
   ?>
   <?php if( $the_query->have_posts() ): ?>
     <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-    <li class="swiper-pagination-bullet"><span><?php the_post_thumbnail('medium'); // Declare pixel size you need inside the array ?></span>
+    <li class="swiper-pagination-bullet"><span><?php the_post_thumbnail('author'); // Declare pixel size you need inside the array ?></span>
     </li>
     <?php endwhile; ?>
   <?php endif; ?>

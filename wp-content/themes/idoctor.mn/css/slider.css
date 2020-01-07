@@ -11,6 +11,9 @@
         margin:  auto 0;
         min-height: 440px
     }
+.home-slider .swiper-slide .slide-image picture{
+    height:440px;
+}
     .home-slider .skip-slider {
         position: absolute;
         right: 20px;
